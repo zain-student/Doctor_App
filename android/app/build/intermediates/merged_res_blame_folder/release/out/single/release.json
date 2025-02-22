@@ -1,0 +1,1046 @@
+[
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_sp02icon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_sp02icon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_images_rnnlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_images_rnnlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitals.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitals.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_status_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_status_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowdown.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowdown.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_400regular.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_400regular.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_heart.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_heart.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_images_crlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_images_crlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_soapicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_soapicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowup.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowup.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxxhdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxxhdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_investigationicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_investigationicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_rnnlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_rnnlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_status_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_status_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_home_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_home_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_x.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_x.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_600semibold.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_600semibold.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_allergiesicon2.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_allergiesicon2.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_ladybug.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_ladybug.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_github.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_github.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_welcomeface.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_welcomeface.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_check.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_check.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_drawericon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_drawericon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_clap.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_clap.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_check.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_check.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_profile.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_profile.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_images_sadface.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_images_sadface.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_x.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_x.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_checkin.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_checkin.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_debug.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_debug.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_pharmacy.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_pharmacy.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_menu.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_menu.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_sadface.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_sadface.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_debug.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_debug.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_queue_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_queue_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_referralsicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_referralsicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_facesheeticon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_facesheeticon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_podcast.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_podcast.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_vitals_history_c_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_vitals_history_c_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_logo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_queue_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_queue_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_view.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_view.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_checkout.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_checkout.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_close.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_close.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_bell.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_bell.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_tempicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_tempicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_caretright.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_caretright.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_ladybug.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_ladybug.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_search_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_search_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_entypo.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_entypo.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_home.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_home.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_more.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_more.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_status_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_status_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_search_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_search_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_back.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_back.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_caretleft.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_caretleft.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_vitals_history.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_vitals_history.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_heart.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_heart.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_search.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_search.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_vitals.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_vitals.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_add.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_add.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_podcast.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_podcast.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_profile.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_profile.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_500medium.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_500medium.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_close.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_close.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_status.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_status.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_checkout.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_checkout.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_usericon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_usericon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_prescription.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_prescription.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_sync.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_sync.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_search_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_search_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_images_rnrlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_images_rnrlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowdown.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowdown.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_queue_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_queue_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_community.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_community.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_eye.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_eye.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.doctor.app-main-47:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_pin.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_pin.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_new.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_new.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_back.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_back.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xhdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xhdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_podcast.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_podcast.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_lock.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_lock.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_images_welcomeface.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_images_welcomeface.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_closeicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_closeicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_components.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_components.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_pharmacy.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_pharmacy.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_debug.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_debug.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_home_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_home_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_status_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_status_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_soapbg.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_soapbg.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_rnllogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_rnllogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_unsync.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_unsync.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_vitals_history_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_vitals_history_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_search.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_search.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_sync.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_sync.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_home.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_home.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_settings.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_settings.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_status_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_status_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_deleteicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_deleteicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_search_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_search_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitals_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitals_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_x.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_x.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_images_background.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_images_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_status_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_status_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_heart.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_heart.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_surgicalhistoryicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_surgicalhistoryicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_pharmacy.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_pharmacy.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_images_crlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_images_crlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_view.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_view.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_images_rnnlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_images_rnnlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_addnote.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_addnote.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_tick.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_tick.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_search_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_search_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitals_history.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitals_history.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_300light.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_300light.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_vitals_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_vitals_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_syncdone.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_syncdone.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_heart_icon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_heart_icon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_images_welcomeface.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_images_welcomeface.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-mdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-mdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_status.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_status.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_search.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_search.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_100thin.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_100thin.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_prescription.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_prescription.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_hidden.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_hidden.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_bpsysicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_bpsysicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_pulseicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_pulseicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_pin.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_pin.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_lock.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_lock.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxhdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxhdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_calendaricon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_calendaricon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitals_history_c_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitals_history_c_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_slack.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_slack.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_images_rnllogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_images_rnllogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitals_history_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitals_history_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_github.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_github.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_checkicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_checkicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_view.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_view.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_200extralight.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_200extralight.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_services_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_services_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_bell.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_bell.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_images_rnllogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_images_rnllogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_checkin.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_checkin.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_profile.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_profile.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_images_rnrlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_images_rnrlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_home_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_home_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_queue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_queue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_historyicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_historyicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_800extrabold.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_800extrabold.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_queue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_queue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_vitals.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_vitals.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_vitals_history_c_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_vitals_history_c_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_more.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_more.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_menu.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_menu.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_github.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_github.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_unsync.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_unsync.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_heart_icon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_heart_icon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_queue_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_queue_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_caretright.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_caretright.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_hidden.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_hidden.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_followupicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_followupicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_search_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_search_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_clap.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_clap.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_settings.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_settings.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_vitals_history.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_vitals_history.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_addicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_addicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_waistcircumicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_waistcircumicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_logout.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_logout.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_heart_icon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_heart_icon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_900black.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_900black.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_physicalexamicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_physicalexamicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_community.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_community.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_add.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_add.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_blueaddicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_blueaddicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_sync.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_sync.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_more.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_more.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_diagnosisicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_diagnosisicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_checkin.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_checkin.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_check.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_check.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_bpdia.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_bpdia.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_editicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_editicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_allergiesicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_allergiesicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_status.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_status.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_components.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_components.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_menu.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_menu.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_ladybug.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_ladybug.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_prescription.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_prescription.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_lock.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_lock.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_settings.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_settings.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_pin.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_pin.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_vitals_history_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_vitals_history_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_checkout.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_checkout.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_caretright.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_caretright.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_heighticon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_heighticon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_caretleft.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_caretleft.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_crlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_crlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_hearticon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_hearticon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_queue_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_queue_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_caretleft.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_caretleft.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_queue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_queue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_weighticon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_weighticon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_components.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_components.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_rnrlogo.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_rnrlogo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_home.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_home.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_slack.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_slack.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_queue_c.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_queue_c.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-hdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-hdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_slack.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_slack.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_add.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_add.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_antdesign.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_antdesign.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_clap.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_clap.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_searchicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_searchicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/raw_node_modules_expogooglefonts_inter_inter_700bold.ttf.flat",
+        "source": "com.doctor.app-res-40:/raw/node_modules_expogooglefonts_inter_inter_700bold.ttf"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_unsync.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_unsync.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_vitalsicons_bmiicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_vitalsicons_bmiicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_images_sadface.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_images_sadface.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_downicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_downicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_community.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_community.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-hdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-hdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_icons_back.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_icons_back.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_medicationicon.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_medicationicon.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_top_image.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_top_image.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_vitals_blue.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_vitals_blue.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_images_background.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_images_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xxhdpi_assets_icons_hidden.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xxhdpi/assets_icons_hidden.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-47:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-xhdpi_assets_images_background.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-xhdpi/assets_images_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-46:/drawable-mdpi_assets_icons_bell.png.flat",
+        "source": "com.doctor.app-res-40:/drawable-mdpi/assets_icons_bell.png"
+    }
+]

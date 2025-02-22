@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xhdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xhdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxxhdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxxhdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxhdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxhdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-mdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-mdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-hdpi_bootsplash_logo.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-hdpi/bootsplash_logo.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.doctor.app-main-50:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.doctor.app-merged_res-48:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.doctor.app-main-50:/drawable/rn_edit_text_material.xml"
+    }
+]
