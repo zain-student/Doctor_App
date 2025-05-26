@@ -93,6 +93,15 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
     const [selectedIndexForaEdit, setSelectedIndexForaEdit] = useState<
       null | number
     >(null);
+    // ....................
+    const [dayValue, setDayValue] = useState<number | null>(null);
+    const [weekValue, setWeekValue] = useState<number | null>(null);
+    const [monthValue, setMonthValue] = useState<number | null>(null);
+    const [editingCategory, setEditingCategory] = useState<
+      'day' | 'week' | 'month' | null
+    >(null);
+
+    // ....................
     const [selectedAllergyItemForEdit, setSelectedAllergyItemForEdit] =
       useState(null);
     const [showAllergiesForm, setShowAllergiesForm] = useState(false);
@@ -243,15 +252,33 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
       ];
       setShowOrderInvestigation(true);
     };
-
+    // ....................................
+    const handleSave = (value: number) => {
+      if (editingCategory === 'day') {
+        setDayValue(value);
+      } else if (editingCategory === 'week') {
+        setWeekValue(value);
+      } else if (editingCategory === 'month') {
+        setMonthValue(value);
+      }
+      setShowTableComp(false); // hide UI again
+    };
+// ........................................
     const onAddInvestigationsPressed = () => {
       try {
         if (showOrderInvestigationTable) {
+          // Require atleast one of the field to be selected
+          if (!vaccdata[0]?.value && !vaccdata[1]?.value) {
+            alert('Please select atleast one field');
+            return;
+          }
+
+          // if (showOrderInvestigationTable) {
           let _data = currentPatient;
           let dataToAdd = {
             // SpecimenId: 42087,
             // PatientId: 6,
-            ServiceName: vaccdata[0].value,
+            ServiceName: vaccdata[0]?.value || vaccdata[1]?.value || '',
             OrderDate: moment().toISOString(),
             EnteredByName: mmkvStorage.getString('loggedInUsername'),
             EnteredBy: {
@@ -268,7 +295,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
             isChanged: true,
           };
 
-          if (global.investigationDropdownData) {
+          if (vaccdata[0]?.value && global.investigationDropdownData) {
             let itemToFind = global.investigationDropdownData.find(
               item => item.Name === vaccdata[0].value,
             );
@@ -281,7 +308,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
             }
           }
 
-          if (global.vaccinationDropdownData) {
+          if (vaccdata[1]?.value && global.vaccinationDropdownData) {
             let itemToFind = global.vaccinationDropdownData.find(
               item => item.CvxDescription === vaccdata[1].value,
             );
@@ -671,9 +698,10 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
                   )}
                 </View>
                 <TouchableOpacity
-                  disabled={
-                    vaccdata[0].value && vaccdata[1].value ? false : true
-                  }
+                  // disabled={
+                  //   vaccdata[0].value && vaccdata[1].value ? false : true
+                  // }
+                  disabled={!(vaccdata[0]?.value || vaccdata[1]?.value)}
                   onPress={onAddInvestigationsPressed}
                   style={{
                     height: 42,
@@ -825,6 +853,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
                                     }}>
                                     Presentation Complaint
                                   </Text>
+                                  {/* ................................................ */}
                                   <TouchableOpacity
                                     onPress={() => {
                                       tableType = 'presentComplaint';
@@ -837,7 +866,20 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
                                       style={{marginLeft: 6}}
                                     />
                                   </TouchableOpacity>
-
+                                  <TouchableOpacity
+                                    onPress={() => {
+                                      tableType = 'presentComplaint'; // existing
+                                      setSelectedIndexForaEdit(-1); // maybe new entry
+                                      setEditingCategory('day'); // or 'week' or 'month'
+                                      setShowTableComp(true);
+                                    }}>
+                                    <Icon
+                                      icon={'blueAddIcon'}
+                                      size={20}
+                                      style={{marginLeft: 6}}
+                                    />
+                                  </TouchableOpacity>
+{/* 
                                   <TouchableOpacity
                                     onPress={() => {
                                       tableType = 'presentComplaint';
@@ -849,7 +891,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
                                       size={20}
                                       style={{marginLeft: 6}}
                                     />
-                                  </TouchableOpacity>
+                                  </TouchableOpacity> */}
                                 </View>
                                 {/* <View
                                   style={{
@@ -1049,6 +1091,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
                             )}
                           </>
                         )}
+                        {/* ......................................................... */}
                         {!showTableComp &&
                           expandedItemId === 2 &&
                           item.id === 2 && (

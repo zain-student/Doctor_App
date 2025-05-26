@@ -943,7 +943,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             testID="login-heading"
             preset="bold"
             style={{color: '#475569', fontSize: 12}}>
-            {title.FirstName}
+            {title.FirstName + ' ' + title.LastName}
           </Text>
           <Text
             testID="login-heading"

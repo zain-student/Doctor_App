@@ -1,4 +1,4 @@
-#Fri Jan 31 01:38:59 PKT 2025
+#Sun May 25 21:07:27 PDT 2025
 path.4=14/classes.dex
 path.3=13/classes.dex
 path.2=0/classes.dex
@@ -7,19 +7,19 @@ path.7=0/classes2.dex
 path.6=classes3.dex
 path.5=classes2.dex
 path.0=classes.dex
-base.4=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.3=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
-base.2=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.1=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.0=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.4=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.3=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.2=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.0=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 renamed.7=classes8.dex
 renamed.6=classes7.dex
-base.7=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes2.dex
+base.7=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes2.dex
 renamed.5=classes6.dex
-base.6=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
+base.6=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
 renamed.4=classes5.dex
-base.5=/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.5=C\:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex

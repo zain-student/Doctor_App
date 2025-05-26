@@ -28,6 +28,12 @@ export default function TableComponent(props: any) {
     {title: 'Measures Taken', desc: 'Paracetamol'},
     {title: 'Exposure to Extreme Heat', desc: 'No'},
   ]);
+  // ....................................................................
+  const [dayValue, setDayValue] = useState<number | null>(null);
+const [weekValue, setWeekValue] = useState<number | null>(null);
+const [monthValue, setMonthValue] = useState<number | null>(null);
+const [editingCategory, setEditingCategory] = useState<'day' | 'week' | 'month' | null>(null);
+// ..................................................................
   useEffect(() => {
     // console.warn('here', global.physicalExamData.length);
     if (props.selectedIndexForaEdit === -1) {

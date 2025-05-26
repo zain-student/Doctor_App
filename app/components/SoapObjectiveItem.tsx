@@ -679,7 +679,7 @@ export default function SoapObjectiveItem(props: any) {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              props.onDiagnosisPressed();
+              props.onDiagnosisPressed(); //.....
             }}>
             <Icon icon={'blueAddIcon'} size={20} style={{marginLeft: 6}} />
           </TouchableOpacity>

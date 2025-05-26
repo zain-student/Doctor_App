@@ -327,7 +327,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
             testID="login-heading"
             preset="bold"
             style={{maxWidth: '50%', color: '#475569', fontSize: 12}}>
-            {title.FirstName}
+            {title.FirstName + ' ' + title.LastName}
           </Text>
           <Text testID="login-heading" preset="default" style={$patientsText}>
             {

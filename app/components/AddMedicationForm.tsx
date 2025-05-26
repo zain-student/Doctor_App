@@ -27,7 +27,7 @@ let medicationFormDataBackup = [
     title: 'Dosage Form',
     value: 'TABLET',
     type: 'dropdown',
-    list: ['SYRUP', 'TABLET'],
+    list: ['SYRUP', 'TABLET','CAPSULE'],
   },
   {
     title: 'Frequency',
@@ -142,6 +142,8 @@ export default function AddMedicationForm(props: any) {
         medicationFormData = JSON.parse(
           JSON.stringify(medicationFormDataBackup),
         );
+        // Add the start date bydefault to the visit date
+        medicationFormData[7].value = moment().format('YYYY-MM-DD');
         setRefreshData(!refreshData);
         console.warn('medicationFormData', medicationFormData);
       }
@@ -174,6 +176,15 @@ export default function AddMedicationForm(props: any) {
     }
     setShowDropdown(true);
   };
+  // const onDropdownItemPressed = (item: any) => {
+  //   medicationFormData[dropdownIndex].value =
+  //     dropdownIndex === 1
+  //       ? item.Route
+  //       : dropdownIndex === 3
+  //       ? item.Frequency
+  //       : item;
+  //   setShowDropdown(false);
+  // };
   const onDropdownItemPressed = (item: any) => {
     medicationFormData[dropdownIndex].value =
       dropdownIndex === 1
@@ -181,31 +192,166 @@ export default function AddMedicationForm(props: any) {
         : dropdownIndex === 3
         ? item.Frequency
         : item;
+
     setShowDropdown(false);
+
+    // If Dosage Form or Frequency changed, update quantity
+    if (dropdownIndex === 2 || dropdownIndex === 3) {
+      updateQuantity();
+      setRefreshData(prev => !prev); // trigger re-render
+    }
+    setShowDropdown(false)
+          setRefreshData(prev => !prev); // trigger re-render
   };
+
+  // const onChangeText = (queryStr: string) => {
+  //   setSearchedStr(queryStr);
+  //   try {
+  //     let data = global.medicineListData;
+  //     let filteredData = [];
+  //     if (data) {
+  //       filteredData = data.filter(item => item.Name.includes(queryStr));
+  //     }
+  //     console.warn('sss', filteredData);
+  //     setFilteredData(filteredData);
+  //     // setDropdownIndex(0);
+  //     // setShowDropdown(true);
+  //   } catch (e) {}
+  // };
   const onChangeText = (queryStr: string) => {
     setSearchedStr(queryStr);
     try {
       let data = global.medicineListData;
+      console.log('OOOOOOOOOO:', data);
       let filteredData = [];
       if (data) {
-        filteredData = data.filter(item => item.Name.includes(queryStr));
+        filteredData = data.filter(item =>
+          item.Name.toLowerCase().includes(queryStr.toLowerCase()),
+        );
       }
-      console.warn('sss', filteredData);
       setFilteredData(filteredData);
-      // setDropdownIndex(0);
-      // setShowDropdown(true);
-    } catch (e) {}
+    } catch (e) {
+      console.warn('Search error:', e);
+    }
   };
+  // ..........................................................
+  const frequencyToNumber = (frequency: string) => {
+    switch (frequency.toLowerCase()) {
+      case 'oncedaily':
+        case 'onetimedaily':
+          case 'Bed Time':
+        return 1;
+      case '2timesaday':
+        return 2;
+      case '3timesaday':
+        return 3;
+      case '4timesaday':
+        return 4;
+      default:
+        return 1; // fallback
+    }
+  };
+
+  // const updateQuantity = () => {
+  //   const dose = medicationFormData[0].value || 1;
+  //   const frequencyStr = medicationFormData[3].value || '';
+  //   const duration = medicationFormData[4].value || 1;
+
+  //   const frequency = frequencyToNumber(frequencyStr);
+
+  //   const quantity = dose * frequency * duration;
+  //   medicationFormData[5].value = quantity;
+  // };
+  // const updateQuantity = () => {
+  //   const dose = medicationFormData[0].value || 1;
+  //   const frequencyStr = medicationFormData[3].value || '';
+  //   const duration = medicationFormData[4].value || 1;
+  //   const dosageForm = medicationFormData[2].value?.toLowerCase() || '';
+
+  //   const frequency = frequencyToNumber(frequencyStr);
+
+  //   // ✅ If not tablet or capsule, force quantity to 1
+  //   if (dosageForm !== 'tablet' && dosageForm !== 'capsule') {
+  //     medicationFormData[5].value = 1;
+  //     return;
+  //   }
+
+  //   // ✅ Otherwise, calculate normally
+  //   const quantity = dose * frequency * duration;
+  //   medicationFormData[5].value = quantity;
+  // };
+//   const updateQuantity = () => {
+//   const dose = Number(medicationFormData[0].value) || 1;
+//   const frequencyStr = medicationFormData[3].value || '';
+//   const duration = Number(medicationFormData[4].value) || 1;
+//   const dosageForm = (medicationFormData[2].value || '').toLowerCase();
+
+//   const frequency = frequencyToNumber(frequencyStr);
+
+//   if (dosageForm !== 'tablet' && dosageForm !== 'capsule') {
+//     medicationFormData[5].value = 1; // quantity = 1 if not tablet/capsule
+//     return;
+//   }
+
+//   medicationFormData[5].value = dose * frequency * duration;
+// };
+const updateQuantity = () => {
+  const dose = Number(medicationFormData[0].value) || 1;
+  const frequencyStr = medicationFormData[3].value || '';
+  const duration = Number(medicationFormData[4].value) || 1;
+
+  // Get the actual unit (DosageValueUnitName)
+  const dosageUnit = (medicationFormData[2].value || '').toLowerCase();
+
+  const frequency = frequencyToNumber(frequencyStr);
+
+  // ✅ Consider 'mg' or any unit that implies tablet/capsule
+  const isTabOrCap = dosageUnit.includes('mg') || dosageUnit.includes('tab') || dosageUnit.includes('cap');
+
+  const quantity = isTabOrCap ? dose * frequency * duration : 1;
+
+  medicationFormData[5].value = quantity;
+};
+
+
+  // .....................................................
   const onChangeItemCount = (item: any, index: number, action: string) => {
     let _value = medicationFormData[index].value;
+    // if (typeof _value === 'number') {
+    //   if (action === 'add') {
+
+    //     medicationFormData[index].value = _value + 1;
+    //   } else {
+    //     medicationFormData[index].value = _value > 1 ? _value - 1 : 1;
+    //   }
+    // }
     if (typeof _value === 'number') {
       if (action === 'add') {
-        medicationFormData[index].value = _value + 1;
+        // ✅ If Duration, cap at 3
+        if (item.title === 'Duration') {
+          medicationFormData[index].value = _value < 3 ? _value + 1 : 3;
+        } else {
+          medicationFormData[index].value = _value + 1;
+        }
       } else {
         medicationFormData[index].value = _value > 1 ? _value - 1 : 1;
       }
     }
+
+    if (item.title === 'Duration') {
+      const duration = medicationFormData[index].value;
+      const startDateValue =
+        medicationFormData[7].value || moment().format('YYYY-MM-DD');
+      const endDate = moment(startDateValue)
+        .add(duration, 'days')
+        .format('YYYY-MM-DD');
+      medicationFormData[8].value = endDate;
+    }
+    // ✅ Recalculate quantity on Dose / Frequency / Duration change
+    if (['Dose', 'Frequency', 'Duration'].includes(item.title)) {
+      updateQuantity();
+    } //.......................................................
+
     setRefreshData(!refreshData);
   };
   const onDateSelected = (val: Date) => {
@@ -213,91 +359,175 @@ export default function AddMedicationForm(props: any) {
     medicationFormData[dateType].value = val.toDateString();
     setIsDatePickerVisible(false);
   };
+  // const onSubmit = () => {
+  //   try {
+  //     if (
+  //       medicationFormData.some(
+  //         item => item.value === 0 || item.value?.length === 0,
+  //       ) ||
+  //       medicineName.length === 0
+  //     ) {
+  //       ToastAndroid.show('All fields are required', ToastAndroid.LONG);
+  //       return;
+  //     }
+  //     let diff = moment(medicationFormData[8].value).diff(
+  //       medicationFormData[7].value,
+  //       'days',
+  //     );
+  //     console.warn('diff', diff);
+  //     if (diff >= 1) {
+  //       // go onw
+  //       let patient = props.currentPatient;
+  //       // patient.diagnosis?.PatientWiseList=[]
+  //       let data = {
+  //         // Id: 72,
+  //         // PatientMedicationId: 78,
+  //         Id:
+  //           props.currentPatient && props.selectedMedicationIndex !== -1
+  //             ? patient.medications[props.selectedMedicationIndex].Id
+  //             : null,
+  //         MedicineId: medicineId,
+  //         MedicationListId: medicineId,
+  //         // PatientId: props.currentPatient.patient.PatientId,
+  //         // OrderNumber: 'PH-21-000068',
+  //         // RxNumber: 'RX-000068',
+  //         DrugName: medicineName,
+  //         RemainingQTY: 0,
+  //         Date: '2021-12-29T00:00:00',
+  //         ProviderName: mmkvStorage.getString('loggedInUsername') ?? '',
+  //         DirectionToProivder: medicationFormData[10].value,
+  //         DirectionToPatient: medicationFormData[9].value,
+  //         Quantity: medicationFormData[5].value,
+  //         //Custom Added
+  //         Comments: medicationFormData[11].value,
+  //         Dose: medicationFormData[0].value,
+  //         Route: medicationFormData[1].value,
+  //         DosageForm: medicationFormData[2].value,
+  //         Frequency: medicationFormData[3].value,
+  //         Refill: medicationFormData[6].value,
+  //         //Custom Added
+  //         NoteId: 0,
+  //         Issued: true,
+  //         UnitPrice: 22.8,
+  //         // PatientName: 'Test-1 Test-1',
+  //         // MRNo: '01-01-000006',
+  //         // TokenDate: null,
+  //         EnteredBy: 0,
+  //         EnteredByName: 'Ali',
+  //         EnteredOn: moment().toISOString(),
+  //         UpdatedBy: 0,
+  //         UpdatedOn: moment().toISOString(),
+  //         StartDate: medicationFormData[7].value,
+  //         EndDate: medicationFormData[8].value,
+  //         QtyInStock: 0,
+  //         isNew: true,
+  //         // Alert: false,
+  //       };
+  //       if (props.currentPatient && props.selectedMedicationIndex !== -1) {
+  //         patient.medications[props.selectedMedicationIndex] = data;
+  //       } else {
+  //         if (patient.medications) {
+  //           patient.medications.push(data);
+  //         } else {
+  //           patient.medications = [data];
+  //         }
+  //       }
+  //       props.updateCurrentPatient(patient);
+  //       props.onGoBack();
+  //     } else {
+  //       ToastAndroid.show(
+  //         'Start date should be before end date',
+  //         ToastAndroid.LONG,
+  //       );
+  //     }
+  //   } catch (e) {
+  //     console.warn('err', e);
+  //   }
+  // };
+
   const onSubmit = () => {
     try {
-      if (
-        medicationFormData.some(
-          item => item.value === 0 || item.value?.length === 0,
-        ) ||
-        medicineName.length === 0
-      ) {
-        ToastAndroid.show('All fields are required', ToastAndroid.LONG);
+      const requiredIndexes = [0, 1, 2, 3, 5, 6, 7]; // indexes of required fields (excluding end date [8], direction to patient [9], direction to pharmacist [10], comments [11])
+
+      const hasEmptyRequiredField = requiredIndexes.some(
+        idx =>
+          medicationFormData[idx]?.value === 0 ||
+          medicationFormData[idx]?.value?.length === 0,
+      );
+
+      if (hasEmptyRequiredField || medicineName.length === 0) {
+        ToastAndroid.show(
+          'All required fields must be filled',
+          ToastAndroid.LONG,
+        );
         return;
       }
-      let diff = moment(medicationFormData[8].value).diff(
-        medicationFormData[7].value,
-        'days',
-      );
-      console.warn('diff', diff);
-      if (diff >= 1) {
-        // go onw
-        let patient = props.currentPatient;
-        // patient.diagnosis?.PatientWiseList=[]
-        let data = {
-          // Id: 72,
-          // PatientMedicationId: 78,
-          Id:
-            props.currentPatient && props.selectedMedicationIndex !== -1
-              ? patient.medications[props.selectedMedicationIndex].Id
-              : null,
-          MedicineId: medicineId,
-          MedicationListId: medicineId,
-          // PatientId: props.currentPatient.patient.PatientId,
-          // OrderNumber: 'PH-21-000068',
-          // RxNumber: 'RX-000068',
-          DrugName: medicineName,
-          RemainingQTY: 0,
-          Date: '2021-12-29T00:00:00',
-          ProviderName: mmkvStorage.getString('loggedInUsername') ?? '',
-          DirectionToProivder: medicationFormData[10].value,
-          DirectionToPatient: medicationFormData[9].value,
-          Quantity: medicationFormData[5].value,
-          //Custom Added
-          Comments: medicationFormData[11].value,
-          Dose: medicationFormData[0].value,
-          Route: medicationFormData[1].value,
-          DosageForm: medicationFormData[2].value,
-          Frequency: medicationFormData[3].value,
-          Refill: medicationFormData[6].value,
-          //Custom Added
-          NoteId: 0,
-          Issued: true,
-          UnitPrice: 22.8,
-          // PatientName: 'Test-1 Test-1',
-          // MRNo: '01-01-000006',
-          // TokenDate: null,
-          EnteredBy: 0,
-          EnteredByName: 'Ali',
-          EnteredOn: moment().toISOString(),
-          UpdatedBy: 0,
-          UpdatedOn: moment().toISOString(),
-          StartDate: medicationFormData[7].value,
-          EndDate: medicationFormData[8].value,
-          QtyInStock: 0,
-          isNew: true,
-          // Alert: false,
-        };
-        if (props.currentPatient && props.selectedMedicationIndex !== -1) {
-          patient.medications[props.selectedMedicationIndex] = data;
-        } else {
-          if (patient.medications) {
-            patient.medications.push(data);
-          } else {
-            patient.medications = [data];
-          }
-        }
-        props.updateCurrentPatient(patient);
-        props.onGoBack();
-      } else {
+
+      // If EndDate is provided, validate it against StartDate
+      const startDate = medicationFormData[7].value;
+      const endDate = medicationFormData[8].value;
+      if (endDate && moment(endDate).diff(startDate, 'days') < 1) {
         ToastAndroid.show(
           'Start date should be before end date',
           ToastAndroid.LONG,
         );
+        return;
       }
+
+      // Proceed with creating the data object
+      let patient = props.currentPatient;
+
+      let data = {
+        Id:
+          props.currentPatient && props.selectedMedicationIndex !== -1
+            ? patient.medications[props.selectedMedicationIndex].Id
+            : null,
+        MedicineId: medicineId,
+        MedicationListId: medicineId,
+        DrugName: medicineName,
+        RemainingQTY: 0,
+        Date: '2021-12-29T00:00:00',
+        ProviderName: mmkvStorage.getString('loggedInUsername') ?? '',
+        DirectionToProivder: medicationFormData[10]?.value ?? '',
+        DirectionToPatient: medicationFormData[9]?.value ?? '',
+        Quantity: medicationFormData[5]?.value,
+        Comments: medicationFormData[11]?.value ?? '',
+        Dose: medicationFormData[0]?.value,
+        Route: medicationFormData[1]?.value,
+        DosageForm: medicationFormData[2]?.value,
+        Frequency: medicationFormData[3]?.value,
+        Refill: medicationFormData[6]?.value,
+        NoteId: 0,
+        Issued: true,
+        UnitPrice: 22.8,
+        EnteredBy: 0,
+        EnteredByName: 'Ali',
+        EnteredOn: moment().toISOString(),
+        UpdatedBy: 0,
+        UpdatedOn: moment().toISOString(),
+        StartDate: startDate,
+        EndDate: endDate ?? null,
+        QtyInStock: 0,
+        isNew: true,
+      };
+
+      if (props.currentPatient && props.selectedMedicationIndex !== -1) {
+        patient.medications[props.selectedMedicationIndex] = data;
+      } else {
+        if (patient.medications) {
+          patient.medications.push(data);
+        } else {
+          patient.medications = [data];
+        }
+      }
+
+      props.updateCurrentPatient(patient);
+      props.onGoBack();
     } catch (e) {
       console.warn('err', e);
     }
   };
+
   return (
     <ScrollView style={{flex: 1}}>
       <DatePicker
@@ -367,6 +597,29 @@ export default function AddMedicationForm(props: any) {
                   setSearchedStr(item.Name);
                   medicineId = item.MedicationListId;
                   setFilteredData([]);
+                  // ✅ Add this block to auto-set the dosage form unit (e.g., mg, ml, DROP)
+                  const dosageFormIndex = medicationFormData.findIndex(
+                    field => field.title === 'Dosage Form',
+                  );
+                  if (dosageFormIndex !== -1) {
+                    medicationFormData[dosageFormIndex].value =
+                      item.DosageValueUnitName || '';
+                  }
+                  updateQuantity();
+//  // ✅ Auto-set Quantity to "1" if not TAB or CAP
+//   const dosageUnit = (item.DosageValueUnitName || '').toUpperCase();
+//   const isTabOrCap =
+//     dosageUnit.startsWith('TAB') || dosageUnit.startsWith('CAP');
+
+//   if (!isTabOrCap) {
+//     const quantityIndex = medicationFormData.findIndex(
+//       field => field.title === 'Quantity',
+//     );
+//     if (quantityIndex !== -1) {
+//       medicationFormData[quantityIndex].value = '1';
+//     }
+//   }
+                  setRefreshData(prev => !prev); // if you’re using a trigger to refresh
                 }}>
                 <Text
                   style={{

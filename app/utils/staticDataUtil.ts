@@ -38,10 +38,19 @@ export const presentComplaint = {
       QuestionName: 'Note',
       Answer: '',
     },
+    // {
+    //   QuestionName: 'Duration',
+    //   Answer: 'Day,1,2,3,4,5,6,7,Weeks,2,3,4,Months,2,3,6,9,12,',
+    // },
     {
-      QuestionName: 'Duration',
-      Answer: 'Day,1,2,3,4,5,6,7,Weeks,2,3,4,Months,2,3,6,9,12,',
-    },
+  QuestionName: 'Duration',
+  Answer: JSON.stringify({
+    Days: [1, 2, 3, 4, 5, 6, 7],
+    Weeks: [1, 2, 3, 4],
+    Months: [1, 2, 3, 6, 9, 12]
+  })
+}
+
     {
       QuestionName: 'Associated Symptoms',
       Answer:

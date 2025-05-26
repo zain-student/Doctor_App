@@ -254,16 +254,32 @@ export default function PhysicalExamForm(props: any) {
       <TouchableOpacity
         onPress={() => {
           try {
-            if (medicationFormData.some(item => item.value?.length === 0)) {
-              ToastAndroid.show('All fields are required', ToastAndroid.LONG);
+            // if (medicationFormData.some(item => item.value?.length === 0)) {
+            //   ToastAndroid.show('All fields are required', ToastAndroid.LONG);
+            //   return;
+            // }
+            // Exclude End Date (index 4) from required field validation
+            const requiredFields = medicationFormData.filter(
+              (_, idx) => idx !== 4,
+            );
+            if (requiredFields.some(item => item.value?.length === 0)) {
+              ToastAndroid.show(
+                'Please fill all required fields',
+                ToastAndroid.LONG,
+              );
               return;
             }
-            let diff = moment(medicationFormData[4].value).diff(
-              medicationFormData[3].value,
-              'days',
-            );
-            console.warn('diff', diff);
-            if (diff >= 1) {
+
+            // let diff = moment(medicationFormData[4].value).diff(
+            //   medicationFormData[3].value,
+            //   'days',
+            // );
+            // console.warn('diff', diff);
+            // if (diff >= 1) {
+            const startDate = medicationFormData[3].value;
+            const endDate = medicationFormData[4].value;
+
+            if (!endDate || moment(endDate).diff(startDate, 'days') >= 0) {
               // go onw
               let patient = props.currentPatient;
               // patient.diagnosis?.PatientWiseList=[]
