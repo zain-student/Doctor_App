@@ -91,6 +91,7 @@ export default function PhysicalExamForm(props: any) {
 
   useEffect(() => {
     medicationFormData = JSON.parse(JSON.stringify(medicationFormDataBackup));
+    console.log("nnnnn: ", medicationFormData)
   }, []);
   const onItemPressed = (item: any, index: number) => {
     if (index === 3 || index === 4) {
