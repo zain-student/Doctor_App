@@ -24,6 +24,7 @@ import {UserContext} from 'app/utils/UserContext';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import {useSharedValue} from 'react-native-reanimated';
 import DropDownPicker from 'react-native-dropdown-picker';
+import {Dimensions} from 'react-native';
 import {
   getDoctorNameFromPatient,
   getPhysicalExamFromPatients,
@@ -35,7 +36,7 @@ const chainReactLogo = require('../../assets/images/cr-logo.png');
 const reactNativeLiveLogo = require('../../assets/images/rnl-logo.png');
 const reactNativeRadioLogo = require('../../assets/images/rnr-logo.png');
 const reactNativeNewsletterLogo = require('../../assets/images/rnn-logo.png');
-
+const screenWidth = Dimensions.get('window').width;
 const ADV_SEARCH_DROPDOWN = [
   {
     id: 1,
@@ -92,7 +93,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
     const progress = useSharedValue(0);
     const [advanceSearchDropdownOpen, setAdvanceSearchDropdownOpen] =
       useState(false);
-
+ const containerWidth = screenWidth > 600 ? 600 : '100%'; // max width for tablets
     useFocusEffect(
       useCallback(() => {
         setRefresh(Math.random().toString());
@@ -385,6 +386,9 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
     return (
       
       <>
+      <View style={{flex:1,  width:'100%'
+      // width:containerWidth
+        ,alignSelf:'center'}}>
         {/* <Header
           LeftActionComponent={
             <HeaderBackButton
@@ -401,8 +405,8 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
           RightActionComponent={<ProfileIconButton onPress={profilePress} />}
         />
         <Screen
-          preset="fixed"
-          contentContainerStyle={$container}
+          // preset="fixed"
+          contentContainerStyle={[$container,{width:'100%'}]}
           //  safeAreaEdges={["top"]}
         >
            {/* <View style={{ width: isTablet() ? 800 : '100%', alignSelf: 'center' }}></View> */}
@@ -441,6 +445,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
               {
                 marginVertical: 10,
                 width: '90%',
+                //  width: widthPercentageToDP(100),
                 alignSelf: 'center',
                 height: 40,
                 marginBottom: 18,
@@ -538,6 +543,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
             />
           </View>
         </Screen>
+        </View>
       </>
     );
   };
@@ -546,6 +552,8 @@ const $container: ViewStyle = {
   // paddingTop: spacing.lg + spacing.xl,
   // paddingHorizontal: spacing.lg,
   flex: 1,
+  // alignSelf:'center',
+  width:'100%'
   //  paddingHorizontal: isTablet() ? 40 : 20,
 };
 

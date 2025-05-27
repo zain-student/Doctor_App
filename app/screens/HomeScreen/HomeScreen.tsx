@@ -22,6 +22,7 @@ import {
   TouchableOpacity,
   ToastAndroid,
   PermissionsAndroid,
+
 } from 'react-native';
 import {DrawerLayout, DrawerState} from 'react-native-gesture-handler';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
@@ -49,6 +50,8 @@ import {getRequest, postRequest} from 'app/services/api/NetworkService';
 import Loading from 'app/components/Loading';
 import {patientData} from '../../../patientData';
 import moment from 'moment';
+import { styles } from '../styles/landingScreenStyles';
+const { width, height } = Dimensions.get('window');
 
 const logo = require('../../../assets/images/logo.png');
 
@@ -271,7 +274,7 @@ export const HomeScreen: FC<HomeTabScreenProps<'Home'>> = function HomeScreen(
   const [showQrCodeScanner, setshowQrCodeScanner] = React.useState(false);
   const {siteStore, patientStore, vitalStore} = useStores();
   const userContext = useContext(UserContext);
-
+const isTablet = width > 600;
   const {
     authenticationStore: {logout, appIsOnline},
     // patientStore,
@@ -985,6 +988,7 @@ export const HomeScreen: FC<HomeTabScreenProps<'Home'>> = function HomeScreen(
 
   return (
     <>
+
       <QrCodeScanner
         showQrCodeScanner={showQrCodeScanner}
         onHideQrCodeScanner={onHideQrCodeScanner}
@@ -998,9 +1002,12 @@ export const HomeScreen: FC<HomeTabScreenProps<'Home'>> = function HomeScreen(
         RightActionComponent={<ProfileIconButton onPress={profilePress} />}
       />
       <Screen
-        preset="fixed"
+        // preset="fixed"
+        
         //  safeAreaEdges={["top"]}
-        contentContainerStyle={$screenContainer}>
+        contentContainerStyle={[$screenContainer,{
+          // isTablet ? $tabletContainer:null ,
+           width:'100%' }]}>
         <Text
           style={{
             paddingHorizontal: '5%',
@@ -1014,7 +1021,7 @@ export const HomeScreen: FC<HomeTabScreenProps<'Home'>> = function HomeScreen(
               paddingHorizontal: '5%',
               color: 'red',
               fontSize: 12,
-              alignSelf: 'flex-end',
+              // alignSelf: 'flex-end',
             }}>
             Reset Connection
           </Text>
@@ -1092,7 +1099,11 @@ const $screenContainer: ViewStyle = {
   flex: 1,
   paddingHorizontal: 20,
 };
-
+const $tabletContainer:ViewStyle={
+  paddingHorizontal:80,
+  // maxWidth:600,
+  alignSelf:'center'
+}
 const $drawer: ViewStyle = {
   backgroundColor: colors.background,
   flex: 1,

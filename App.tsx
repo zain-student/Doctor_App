@@ -60,6 +60,7 @@ function App(): JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex:1
   };
 
   return (
@@ -70,7 +71,10 @@ function App(): JSX.Element {
       />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+         contentContainerStyle={{ flexGrow: 1 }} // ⬅️ This helps ScrollView fill space
+        style={{ flex: 1 }} // ⬅️ Make sure ScrollView takes full space
+        // style={backgroundStyle}
+        >
         <Header />
         <View
           style={{
