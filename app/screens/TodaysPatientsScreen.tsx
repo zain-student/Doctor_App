@@ -383,6 +383,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
     };
 
     return (
+      
       <>
         {/* <Header
           LeftActionComponent={
@@ -404,6 +405,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
           contentContainerStyle={$container}
           //  safeAreaEdges={["top"]}
         >
+           {/* <View style={{ width: isTablet() ? 800 : '100%', alignSelf: 'center' }}></View> */}
           <View
             style={{
               borderWidth: 1,
@@ -413,6 +415,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
               backgroundColor: 'white',
               // justifyContent: 'center',
               borderRadius: 6,
+              
               // marginBottom: 18,
               flexDirection: 'row',
               alignItems: 'center',
@@ -543,6 +546,7 @@ const $container: ViewStyle = {
   // paddingTop: spacing.lg + spacing.xl,
   // paddingHorizontal: spacing.lg,
   flex: 1,
+  //  paddingHorizontal: isTablet() ? 40 : 20,
 };
 
 const $title: TextStyle = {
@@ -616,6 +620,9 @@ const $serviceItem: ViewStyle = {
   borderRadius: 5,
   width: isTablet() ? '98%' : '90%',
 };
+
+
+// width: width *(20/360);
 
 const $patientItemDetailView: ViewStyle = {
   flex: 1,

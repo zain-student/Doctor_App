@@ -200,6 +200,11 @@ export default function AddMedicationForm(props: any) {
       updateQuantity();
       setRefreshData(prev => !prev); // trigger re-render
     }
+    if ([0, 2, 3, 4].includes(dropdownIndex)) {
+  medicationFormData[9].value = generateDirectionToPatient();
+  setRefreshData(prev => !prev);
+}
+
     setShowDropdown(false)
           setRefreshData(prev => !prev); // trigger re-render
   };
@@ -444,8 +449,35 @@ const updateQuantity = () => {
   //     console.warn('err', e);
   //   }
   // };
+ const generateDirectionToPatient=()=>{
+const dose=medicationFormData[0]?.value??'';
+const dosageForm=medicationFormData[2]?.value??'';
+const frequency = medicationFormData[3]?.value??'';
+const duration= medicationFormData[4]?.value??'';
+const start= medicationFormData[7].value || moment().format('YYYY-MM-DD');
 
+ let doseText = '';
+
+  if (dosageForm.includes('syrup')) {
+    doseText = `${dose} ${dosageForm.toUpperCase()}`;
+  } else if (dosageForm.includes('mg')) {
+    doseText = `${dose} tablet${dose > 1 ? 's' : ''}`;
+  } else if (dosageForm.includes('capsule')) {
+    doseText = `${dose} capsule${dose > 1 ? 's' : ''}`;
+  } else {
+    doseText = `${dose} ${dosageForm}`;
+  }
+
+if (dose && dosageForm && frequency && duration && start) {
+  if(dosageForm==="SYRUP"){
+return `${dose}ml ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`;
+}
+return `${dose} ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`
+}
+return medicationFormData[9]?.value ?? '';
+      };
   const onSubmit = () => {
+    
     try {
       const requiredIndexes = [0, 1, 2, 3, 5, 6, 7]; // indexes of required fields (excluding end date [8], direction to patient [9], direction to pharmacist [10], comments [11])
 
@@ -473,6 +505,7 @@ const updateQuantity = () => {
         );
         return;
       }
+     
 
       // Proceed with creating the data object
       let patient = props.currentPatient;
@@ -657,6 +690,9 @@ const updateQuantity = () => {
                     multiline
                     onChangeText={val => {
                       medicationFormData[index].value = val;
+                      if ([0, 2, 3, 4].includes(index)) {
+    medicationFormData[9].value = generateDirectionToPatient();
+  }
                       setRefreshData(!refreshData);
                     }}
                     placeholder="Enter directions"
