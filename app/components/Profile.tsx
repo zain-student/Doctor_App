@@ -69,7 +69,7 @@ export function Profile(props: ProfileProps) {
         </View>
         <View style={$patientItemDetailView}>
           <Text testID="login-heading" preset="bold" style={$patientsText}>
-            {currentPatient.FirstName}
+            {currentPatient.FirstName+" "+currentPatient.LastName}
           </Text>
           <Text
             testID="login-heading"

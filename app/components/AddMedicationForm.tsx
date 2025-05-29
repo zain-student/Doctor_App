@@ -27,7 +27,7 @@ let medicationFormDataBackup = [
     title: 'Dosage Form',
     value: 'TABLET',
     type: 'dropdown',
-    list: ['SYRUP', 'TABLET','CAPSULE'],
+    list: ['SYRUP', 'TABLET', 'CAPSULE'],
   },
   {
     title: 'Frequency',
@@ -201,12 +201,12 @@ export default function AddMedicationForm(props: any) {
       setRefreshData(prev => !prev); // trigger re-render
     }
     if ([0, 2, 3, 4].includes(dropdownIndex)) {
-  medicationFormData[9].value = generateDirectionToPatient();
-  setRefreshData(prev => !prev);
-}
+      medicationFormData[9].value = generateDirectionToPatient();
+      setRefreshData(prev => !prev);
+    }
 
-    setShowDropdown(false)
-          setRefreshData(prev => !prev); // trigger re-render
+    setShowDropdown(false);
+    setRefreshData(prev => !prev); // trigger re-render
   };
 
   // const onChangeText = (queryStr: string) => {
@@ -243,8 +243,8 @@ export default function AddMedicationForm(props: any) {
   const frequencyToNumber = (frequency: string) => {
     switch (frequency.toLowerCase()) {
       case 'oncedaily':
-        case 'onetimedaily':
-          case 'Bed Time':
+      case 'onetimedaily':
+      case 'Bed Time':
         return 1;
       case '2timesaday':
         return 2;
@@ -285,39 +285,41 @@ export default function AddMedicationForm(props: any) {
   //   const quantity = dose * frequency * duration;
   //   medicationFormData[5].value = quantity;
   // };
-//   const updateQuantity = () => {
-//   const dose = Number(medicationFormData[0].value) || 1;
-//   const frequencyStr = medicationFormData[3].value || '';
-//   const duration = Number(medicationFormData[4].value) || 1;
-//   const dosageForm = (medicationFormData[2].value || '').toLowerCase();
+  //   const updateQuantity = () => {
+  //   const dose = Number(medicationFormData[0].value) || 1;
+  //   const frequencyStr = medicationFormData[3].value || '';
+  //   const duration = Number(medicationFormData[4].value) || 1;
+  //   const dosageForm = (medicationFormData[2].value || '').toLowerCase();
 
-//   const frequency = frequencyToNumber(frequencyStr);
+  //   const frequency = frequencyToNumber(frequencyStr);
 
-//   if (dosageForm !== 'tablet' && dosageForm !== 'capsule') {
-//     medicationFormData[5].value = 1; // quantity = 1 if not tablet/capsule
-//     return;
-//   }
+  //   if (dosageForm !== 'tablet' && dosageForm !== 'capsule') {
+  //     medicationFormData[5].value = 1; // quantity = 1 if not tablet/capsule
+  //     return;
+  //   }
 
-//   medicationFormData[5].value = dose * frequency * duration;
-// };
-const updateQuantity = () => {
-  const dose = Number(medicationFormData[0].value) || 1;
-  const frequencyStr = medicationFormData[3].value || '';
-  const duration = Number(medicationFormData[4].value) || 1;
+  //   medicationFormData[5].value = dose * frequency * duration;
+  // };
+  const updateQuantity = () => {
+    const dose = Number(medicationFormData[0].value) || 1;
+    const frequencyStr = medicationFormData[3].value || '';
+    const duration = Number(medicationFormData[4].value) || 1;
 
-  // Get the actual unit (DosageValueUnitName)
-  const dosageUnit = (medicationFormData[2].value || '').toLowerCase();
+    // Get the actual unit (DosageValueUnitName)
+    const dosageUnit = (medicationFormData[2].value || '').toLowerCase();
 
-  const frequency = frequencyToNumber(frequencyStr);
+    const frequency = frequencyToNumber(frequencyStr);
 
-  // ✅ Consider 'mg' or any unit that implies tablet/capsule
-  const isTabOrCap = dosageUnit.includes('mg') || dosageUnit.includes('tab') || dosageUnit.includes('cap');
+    // ✅ Consider 'mg' or any unit that implies tablet/capsule
+    const isTabOrCap =
+      dosageUnit.includes('mg') ||
+      dosageUnit.includes('tab') ||
+      dosageUnit.includes('cap');
 
-  const quantity = isTabOrCap ? dose * frequency * duration : 1;
+    const quantity = isTabOrCap ? dose * frequency * duration : 1;
 
-  medicationFormData[5].value = quantity;
-};
-
+    medicationFormData[5].value = quantity;
+  };
 
   // .....................................................
   const onChangeItemCount = (item: any, index: number, action: string) => {
@@ -355,6 +357,7 @@ const updateQuantity = () => {
     // ✅ Recalculate quantity on Dose / Frequency / Duration change
     if (['Dose', 'Frequency', 'Duration'].includes(item.title)) {
       updateQuantity();
+      medicationFormData[9].value = generateDirectionToPatient();
     } //.......................................................
 
     setRefreshData(!refreshData);
@@ -449,35 +452,65 @@ const updateQuantity = () => {
   //     console.warn('err', e);
   //   }
   // };
- const generateDirectionToPatient=()=>{
-const dose=medicationFormData[0]?.value??'';
-const dosageForm=medicationFormData[2]?.value??'';
-const frequency = medicationFormData[3]?.value??'';
-const duration= medicationFormData[4]?.value??'';
-const start= medicationFormData[7].value || moment().format('YYYY-MM-DD');
+  //  const generateDirectionToPatient=()=>{
+  // const dose=medicationFormData[0]?.value??'';
+  // const dosageForm=medicationFormData[2]?.value??'';
+  // const frequency = medicationFormData[3]?.value??'';
+  // const duration= medicationFormData[4]?.value??'';
+  // const start= medicationFormData[7].value || moment().format('YYYY-MM-DD');
 
- let doseText = '';
+  //  let doseText = '';
 
-  if (dosageForm.includes('syrup')) {
-    doseText = `${dose} ${dosageForm.toUpperCase()}`;
-  } else if (dosageForm.includes('mg')) {
-    doseText = `${dose} tablet${dose > 1 ? 's' : ''}`;
-  } else if (dosageForm.includes('capsule')) {
-    doseText = `${dose} capsule${dose > 1 ? 's' : ''}`;
-  } else {
-    doseText = `${dose} ${dosageForm}`;
-  }
+  //   if (dosageForm.includes('syrup')) {
+  //     doseText = `${dose} ${dosageForm.toUpperCase()}`;
+  //   } else if (dosageForm.includes('mg')) {
+  //     doseText = `${dose} tablet${dose > 1 ? 's' : ''}`;
+  //   } else if (dosageForm.includes('capsule')) {
+  //     doseText = `${dose} capsule${dose > 1 ? 's' : ''}`;
+  //   } else {
+  //     doseText = `${dose} ${dosageForm}`;
+  //   }
 
-if (dose && dosageForm && frequency && duration && start) {
-  if(dosageForm==="SYRUP"){
-return `${dose}ml ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`;
-}
-return `${dose} ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`
-}
-return medicationFormData[9]?.value ?? '';
-      };
+  // if (dose && dosageForm && frequency && duration && start) {
+  //   if(dosageForm==="SYRUP"){
+  // return `${dose}ml ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`;
+  // }
+  // return `${dose} ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`
+  // }
+  // return medicationFormData[9]?.value ?? '';
+
+  //       };
+  const generateDirectionToPatient = () => {
+    const dose = medicationFormData[0]?.value ?? '';
+    const dosageForm = medicationFormData[2]?.value ?? '';
+    const frequency = medicationFormData[3]?.value ?? '';
+    const duration = medicationFormData[4]?.value ?? '';
+    const start = medicationFormData[7]?.value || moment().format('YYYY-MM-DD');
+
+    if (!(dose && dosageForm && frequency && duration && start)) {
+      return ''; //  No fallback to old direction
+    }
+
+    if (dosageForm.toLowerCase() === 'syrup') {
+      return `${dose}ml ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`;
+    }
+
+    if (dosageForm.includes('mg')) {
+      return `${dose} tablet${
+        dose > 1 ? 's' : ''
+      } ${frequency} For ${duration} day Starting from ${start}`;
+    }
+
+    if (dosageForm.includes('capsule')) {
+      return `${dose} capsule${
+        dose > 1 ? 's' : ''
+      } ${frequency} For ${duration} day Starting from ${start}`;
+    }
+
+    return `${dose} ${dosageForm} ${frequency} For ${duration} day Starting from ${start}`;
+  };
+
   const onSubmit = () => {
-    
     try {
       const requiredIndexes = [0, 1, 2, 3, 5, 6, 7]; // indexes of required fields (excluding end date [8], direction to patient [9], direction to pharmacist [10], comments [11])
 
@@ -505,7 +538,6 @@ return medicationFormData[9]?.value ?? '';
         );
         return;
       }
-     
 
       // Proceed with creating the data object
       let patient = props.currentPatient;
@@ -639,19 +671,19 @@ return medicationFormData[9]?.value ?? '';
                       item.DosageValueUnitName || '';
                   }
                   updateQuantity();
-//  // ✅ Auto-set Quantity to "1" if not TAB or CAP
-//   const dosageUnit = (item.DosageValueUnitName || '').toUpperCase();
-//   const isTabOrCap =
-//     dosageUnit.startsWith('TAB') || dosageUnit.startsWith('CAP');
+                  //  // ✅ Auto-set Quantity to "1" if not TAB or CAP
+                  //   const dosageUnit = (item.DosageValueUnitName || '').toUpperCase();
+                  //   const isTabOrCap =
+                  //     dosageUnit.startsWith('TAB') || dosageUnit.startsWith('CAP');
 
-//   if (!isTabOrCap) {
-//     const quantityIndex = medicationFormData.findIndex(
-//       field => field.title === 'Quantity',
-//     );
-//     if (quantityIndex !== -1) {
-//       medicationFormData[quantityIndex].value = '1';
-//     }
-//   }
+                  //   if (!isTabOrCap) {
+                  //     const quantityIndex = medicationFormData.findIndex(
+                  //       field => field.title === 'Quantity',
+                  //     );
+                  //     if (quantityIndex !== -1) {
+                  //       medicationFormData[quantityIndex].value = '1';
+                  //     }
+                  //   }
                   setRefreshData(prev => !prev); // if you’re using a trigger to refresh
                 }}>
                 <Text
@@ -691,8 +723,9 @@ return medicationFormData[9]?.value ?? '';
                     onChangeText={val => {
                       medicationFormData[index].value = val;
                       if ([0, 2, 3, 4].includes(index)) {
-    medicationFormData[9].value = generateDirectionToPatient();
-  }
+                        medicationFormData[9].value =
+                          generateDirectionToPatient();
+                      }
                       setRefreshData(!refreshData);
                     }}
                     placeholder="Enter directions"

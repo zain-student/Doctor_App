@@ -4,7 +4,7 @@
             "outputFile": "com.doctor.app-mergeReleaseResources-44:/values-nn/values-nn.xml",
             "map": [
                 {
-                    "source": "/Users/muhammadahmad/ahmad/ReactNative/Onedrive/doctor-app/node_modules/react-native-date-picker/android/build/intermediates/packaged_res/release/values-nn/values-nn.xml",
+                    "source": "C:\\Users\\hp\\Desktop\\OFFLINE APPS\\doctor\\doctor\\node_modules\\react-native-date-picker\\android\\build\\intermediates\\packaged_res\\release\\values-nn\\values-nn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

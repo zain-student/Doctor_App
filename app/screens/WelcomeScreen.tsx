@@ -171,6 +171,8 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
           onPress={goNext}
         />
       </View>
+        {/* <Text style={{fontSize:14,color:'white'}}>Version No:</Text> */}
+      
     </View>
   )
 })
