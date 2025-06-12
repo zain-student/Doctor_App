@@ -93,7 +93,7 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
     const progress = useSharedValue(0);
     const [advanceSearchDropdownOpen, setAdvanceSearchDropdownOpen] =
       useState(false);
- const containerWidth = screenWidth > 600 ? 600 : '100%'; // max width for tablets
+ const containerWidth = screenWidth > 600 ? 600 : '100%'; // max  for tablets
     useFocusEffect(
       useCallback(() => {
         setRefresh(Math.random().toString());
@@ -463,7 +463,8 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
             style={{
               backgroundColor: '#F3F3F3',
               paddingVertical: 8,
-              width: widthPercentageToDP(100),
+              // width: widthPercentageToDP(100),
+              width:"100%",
               paddingHorizontal: 30,
             }}>
             <Text preset="bold" style={{fontSize: 14}}>
@@ -488,7 +489,9 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
           <View style={$patientsListView}>
             <FlatList
               key={refresh}
-              data={query?.length > 0 ? filteredData : userContext.patientsData}
+              data={query?.length > 0 ? filteredData : userContext.patientsData}  // This is showing dummy data from the api for testing 
+              // data={query?.length > 0 ? filteredData : patientStore.patientsForList}  // This will only show data fetched from the mobx store 
+
               // style={$patientsListView}
               extraData={patientStore.patientsForList}
               renderItem={({item, index}) => (

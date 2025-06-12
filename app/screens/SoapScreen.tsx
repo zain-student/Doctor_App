@@ -263,7 +263,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
       }
       setShowTableComp(false); // hide UI again
     };
-// ........................................
+    // ........................................
     const onAddInvestigationsPressed = () => {
       try {
         if (showOrderInvestigationTable) {
@@ -426,18 +426,32 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
         }
         isDataAvailableForSyncing = false;
         let data = JSON.parse(JSON.stringify(currentPatient));
+        // let meds = data.medications.map(itm => {
+        // return {
+        // MedicineId: itm.MedicineId,
+        // DrugName: itm.DrugName,
+        // Quantity: itm.Quantity,
+        // EnteredOn: itm.EnteredOn,
+        // OrderNumber: itm.OrderNumber,
+        // ProviderName: itm.ProviderName,
+        // DirectionToPatient: itm.DirectionToPatient,
+        // return `${itm.MedicineId}:${itm.DrugName}:${itm.Quantity}:${itm.EnteredOn}:${itm.OrderNumber}:${itm.ProviderName}:${itm.DirectionToPatient}`;
+        // };
+        // });
+
+        // This was first stored as a string now we have saved it as an object
         let meds = data.medications.map(itm => {
-          // return {
-          // MedicineId: itm.MedicineId,
-          // DrugName: itm.DrugName,
-          // Quantity: itm.Quantity,
-          // EnteredOn: itm.EnteredOn,
-          // OrderNumber: itm.OrderNumber,
-          // ProviderName: itm.ProviderName,
-          // DirectionToPatient: itm.DirectionToPatient,
-          return `${itm.MedicineId}:${itm.DrugName}:${itm.Quantity}:${itm.EnteredOn}:${itm.OrderNumber}:${itm.ProviderName}:${itm.DirectionToPatient}`;
-          // };
+          return {
+            MedicineId: itm.MedicineId ?? '',
+            DrugName: itm.DrugName ?? '',
+            Quantity: itm.Quantity ?? '',
+            EnteredOn: itm.EnteredOn ?? '',
+            OrderNumber: itm.OrderNumber ?? '',
+            ProviderName: itm.ProviderName ?? '',
+            DirectionToPatient: itm.DirectionToPatient ?? '',
+          };
         });
+
         // console.warn('patient', patient);
         let dataToSend = {
           // ...data.patient,
@@ -879,7 +893,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
                                       style={{marginLeft: 6}}
                                     />
                                   </TouchableOpacity>
-{/* 
+                                  {/* 
                                   <TouchableOpacity
                                     onPress={() => {
                                       tableType = 'presentComplaint';

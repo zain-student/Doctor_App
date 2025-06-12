@@ -14,7 +14,7 @@ import {
 } from "react-native"
 import { colors } from "../theme"
 import { ExtendedEdge, useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
-
+import { useWindowDimensions } from "react-native"
 interface BaseScreenProps {
   /**
    * Children components.
@@ -137,30 +137,79 @@ function useAutoPreset(props: AutoScreenProps) {
   }
 }
 
-function ScreenWithoutScrolling(props: ScreenProps) {
-  const { style, contentContainerStyle, children } = props
+// function ScreenWithoutScrolling(props: ScreenProps) {
+//   const { style, contentContainerStyle, children } = props
+//   return (
+//     <View style={[$outerStyle, style]}>
+//       <View style={[$innerStyle, contentContainerStyle]}>{children}</View>
+//     </View>
+//   )
+// }
+function ScreenWithoutScrolling(props: ScreenProps & { responsiveStyle: ViewStyle }) {
+  const { style, contentContainerStyle, children, responsiveStyle } = props
   return (
     <View style={[$outerStyle, style]}>
-      <View style={[$innerStyle, contentContainerStyle]}>{children}</View>
+      <View style={[$innerStyle, responsiveStyle, contentContainerStyle]}>
+        {children}
+      </View>
     </View>
   )
 }
 
-function ScreenWithScrolling(props: ScreenProps) {
+
+// function ScreenWithScrolling(props: ScreenProps) {
+//   const {
+//     children,
+//     keyboardShouldPersistTaps = "handled",
+//     contentContainerStyle,
+//     ScrollViewProps,
+//     style,
+//   } = props as ScrollScreenProps
+
+//   const ref = useRef<ScrollView>()
+
+//   const { scrollEnabled, onContentSizeChange, onLayout } = useAutoPreset(props as AutoScreenProps)
+
+//   // Add native behavior of pressing the active tab to scroll to the top of the content
+//   // More info at: https://reactnavigation.org/docs/use-scroll-to-top/
+//   useScrollToTop(ref)
+
+//   return (
+//     <ScrollView
+//       {...{ keyboardShouldPersistTaps, scrollEnabled, ref }}
+//       {...ScrollViewProps}
+//       onLayout={(e) => {
+//         onLayout(e)
+//         ScrollViewProps?.onLayout?.(e)
+//       }}
+//       onContentSizeChange={(w: number, h: number) => {
+//         onContentSizeChange(w, h)
+//         ScrollViewProps?.onContentSizeChange?.(w, h)
+//       }}
+//       style={[$outerStyle, ScrollViewProps?.style, style]}
+//       contentContainerStyle={[
+//         $innerStyle,
+//         ScrollViewProps?.contentContainerStyle,
+//         contentContainerStyle,
+//       ]}
+//     >
+//       {children}
+//     </ScrollView>
+//   )
+// }
+function ScreenWithScrolling(props: ScreenProps & { responsiveStyle: ViewStyle }) {
   const {
     children,
     keyboardShouldPersistTaps = "handled",
     contentContainerStyle,
     ScrollViewProps,
     style,
-  } = props as ScrollScreenProps
+    responsiveStyle,
+  } = props as ScrollScreenProps & { responsiveStyle: ViewStyle }
 
   const ref = useRef<ScrollView>()
-
   const { scrollEnabled, onContentSizeChange, onLayout } = useAutoPreset(props as AutoScreenProps)
 
-  // Add native behavior of pressing the active tab to scroll to the top of the content
-  // More info at: https://reactnavigation.org/docs/use-scroll-to-top/
   useScrollToTop(ref)
 
   return (
@@ -178,6 +227,7 @@ function ScreenWithScrolling(props: ScreenProps) {
       style={[$outerStyle, ScrollViewProps?.style, style]}
       contentContainerStyle={[
         $innerStyle,
+        responsiveStyle,
         ScrollViewProps?.contentContainerStyle,
         contentContainerStyle,
       ]}
@@ -188,6 +238,14 @@ function ScreenWithScrolling(props: ScreenProps) {
 }
 
 export function Screen(props: ScreenProps) {
+  const { width } = useWindowDimensions()
+const isTabletLandscape = width >= 768 // or use a more specific condition
+const $responsiveStyle: ViewStyle = {
+  maxWidth: isTabletLandscape ? undefined : 768,
+  alignSelf: isTabletLandscape ? "stretch" : "center",
+  width: "100%",
+}
+
   const {
     backgroundColor = colors.background,
     KeyboardAvoidingViewProps,
@@ -198,6 +256,7 @@ export function Screen(props: ScreenProps) {
   } = props
 
   const $containerInsets = useSafeAreaInsetsStyle(safeAreaEdges)
+
 
   return (
     <View style={[$containerStyle, { backgroundColor }, $containerInsets]}>
@@ -210,9 +269,9 @@ export function Screen(props: ScreenProps) {
         style={[$keyboardAvoidingViewStyle, KeyboardAvoidingViewProps?.style]}
       >
         {isNonScrolling(props.preset) ? (
-          <ScreenWithoutScrolling {...props} />
+          <ScreenWithoutScrolling {...props} responsiveStyle={$responsiveStyle} />
         ) : (
-          <ScreenWithScrolling {...props} />
+          <ScreenWithScrolling {...props} responsiveStyle={$responsiveStyle} />
         )}
       </KeyboardAvoidingView>
     </View>
@@ -223,6 +282,7 @@ const $containerStyle: ViewStyle = {
   flex: 1,
   height: "100%",
   width: "100%",
+  // alignSelf:'stretch'
 }
 
 const $keyboardAvoidingViewStyle: ViewStyle = {

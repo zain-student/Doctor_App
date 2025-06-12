@@ -23,13 +23,13 @@ export default function TableComponent(props: any) {
   const [diagnosticsData, setDiagnosticsData] = useState([
     {title: 'Grade', desc: 'Low-grade (99-100.4 °F)'},
     {title: 'Pattern', desc: 'Continuous'},
-    
+
     {title: 'Duration', desc: '2 Weeks'},
     {title: 'Associated Symptoms', desc: 'Runny Nose,Cough'},
     {title: 'Measures Taken', desc: 'Paracetamol'},
     {title: 'Exposure to Extreme Heat', desc: 'No'},
   ]);
-  
+
   useEffect(() => {
     // console.warn('here', global.physicalExamData.length);
     if (props.selectedIndexForaEdit === -1) {
@@ -50,7 +50,7 @@ export default function TableComponent(props: any) {
     _diagnosticsData[index].desc = val;
     setDiagnosticsData(_diagnosticsData);
   };
-// .......................................................................................
+  // .......................................................................................
   const onSelectItem2 = (sectionIndex: number, index: number, option: any) => {
     try {
       let data = [];
@@ -80,15 +80,14 @@ export default function TableComponent(props: any) {
         //   ];
         // }
         if (indexToFind !== -1) {
-  // Item already exists → remove it
-  data[sectionIndex].data[index].AnswerList.splice(indexToFind, 1);
-} else {
-  // Only keep one item selected per index (duration item)
-  data[sectionIndex].data[index].AnswerList = [
-    { ...option, AnswerOptionId: option.Id },
-  ];
-}
-
+          // Item already exists → remove it
+          data[sectionIndex].data[index].AnswerList.splice(indexToFind, 1);
+        } else {
+          // Only keep one item selected per index (duration item)
+          data[sectionIndex].data[index].AnswerList = [
+            {...option, AnswerOptionId: option.Id},
+          ];
+        }
       } else {
         data[sectionIndex].data[index].AnswerList = [
           {...option, AnswerOptionId: option.Id},
@@ -118,7 +117,7 @@ export default function TableComponent(props: any) {
       console.warn('err', e);
     }
   };
-// ..............................................................
+  // ..............................................................
   const onSavePressed = () => {
     try {
       let data: any;
@@ -173,40 +172,40 @@ export default function TableComponent(props: any) {
   // ...............................................................
   // fever
   const checkIfItemExistsInList2 = (list: any[], itemToCheck: any) => {
-  try {
-    let exists = list.find(item => item.AnswerOptionId === itemToCheck.Id);
-    return !!exists;
-  } catch (e) {
-    console.warn('err', e);
-    return false;
-  }
-};
-// .....................................................................
-// PresentingComplaintForm.tsx (or wherever you're rendering the FlatList)
-
-const groupOptionsByTimeCategory = (optionList) => {
-  const timeCategories = ['Day', 'Weeks', 'Months'];
-  const grouped = [];
-  let currentGroup = null;
-
-  optionList.forEach(option => {
-    if (timeCategories.includes(option.Name)) {
-      if (currentGroup) grouped.push(currentGroup);
-      currentGroup = {
-        QuestionName: `Duration ${option.Name}`,
-        Category: option.Name,
-        OptionList: [],
-      };
-    } else if (currentGroup) {
-      currentGroup.OptionList.push(option);
+    try {
+      let exists = list.find(item => item.AnswerOptionId === itemToCheck.Id);
+      return !!exists;
+    } catch (e) {
+      console.warn('err', e);
+      return false;
     }
-  });
+  };
+  // .....................................................................
+  // PresentingComplaintForm.tsx (or wherever you're rendering the FlatList)
 
-  if (currentGroup) grouped.push(currentGroup);
+  const groupOptionsByTimeCategory = optionList => {
+    const timeCategories = ['Day', 'Weeks', 'Months'];
+    const grouped = [];
+    let currentGroup = null;
 
-  return grouped;
-};
-// ................................................................................
+    optionList.forEach(option => {
+      if (timeCategories.includes(option.Name)) {
+        if (currentGroup) grouped.push(currentGroup);
+        currentGroup = {
+          QuestionName: `Duration ${option.Name}`,
+          Category: option.Name,
+          OptionList: [],
+        };
+      } else if (currentGroup) {
+        currentGroup.OptionList.push(option);
+      }
+    });
+
+    if (currentGroup) grouped.push(currentGroup);
+
+    return grouped;
+  };
+  // ................................................................................
   const checkSectionListVisibility = () => {
     try {
       // if (props.tableType === 'physicalExam') {
@@ -415,16 +414,19 @@ const groupOptionsByTimeCategory = (optionList) => {
                                     {item.QuestionName}:{' '}
                                   </Text>
                                   <FlatList
+                                  key={2}
                                     data={item.OptionList}
-                                    numColumns={8}
-                                    style={{maxWidth: widthPercentageToDP(60)}}
-                                    columnWrapperStyle={{flexWrap: 'wrap'}}
+                                    numColumns={2}
+                                    // style={{maxWidth: widthPercentageToDP(60)}}
+                                      style={{ width: '100%' }}
+                                    // contentContainerStyle={{ flexDirection: 'row' }}
+                                    // columnWrapperStyle={{justifyContent:'space-around'}}
                                     renderItem={({
                                       item: innerItem,
                                       index: innerInd,
                                     }) => (
                                       <View>
-                                       {/* .................................................................... */}
+                                        {/* .................................................................... */}
                                         {innerItem && innerItem.Name && (
                                           <Text
                                             onPress={() =>
