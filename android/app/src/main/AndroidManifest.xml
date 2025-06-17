@@ -35,7 +35,7 @@
         android:launchMode="singleTask"
         android:windowSoftInputMode="adjustPan"
         android:exported="true"
-        android:screenOrientation="portrait" 
+        android:screenOrientation="unspecified" 
         android:theme="@style/BootTheme"
         android:resizeableActivity="true"
         >

@@ -7,6 +7,7 @@ import {
   BackHandler,
   Image,
   ImageBackground,
+  ToastAndroid,
 } from 'react-native';
 import {Header, Screen, Text, Profile, Icon} from '../components';
 import {PatientStackScreenProps} from 'app/navigators';
@@ -421,12 +422,14 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
 
     const onSavePressed = () => {
       try {
+        
+        console.log("Hello1")
         if (!isDataAvailableForSyncing) {
           return;
         }
         isDataAvailableForSyncing = false;
         let data = JSON.parse(JSON.stringify(currentPatient));
-        // let meds = data.medications.map(itm => {
+        let meds = data.medications.map(itm => {
         // return {
         // MedicineId: itm.MedicineId,
         // DrugName: itm.DrugName,
@@ -435,22 +438,22 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
         // OrderNumber: itm.OrderNumber,
         // ProviderName: itm.ProviderName,
         // DirectionToPatient: itm.DirectionToPatient,
-        // return `${itm.MedicineId}:${itm.DrugName}:${itm.Quantity}:${itm.EnteredOn}:${itm.OrderNumber}:${itm.ProviderName}:${itm.DirectionToPatient}`;
+        return `${itm.MedicineId}|||${itm.DrugName}|||${itm.Quantity}|||${itm.EnteredOn}|||${itm.OrderNumber}|||${itm.ProviderName}|||${itm.DirectionToPatient}`;
         // };
-        // });
+        });
 
         // This was first stored as a string now we have saved it as an object
-        let meds = data.medications.map(itm => {
-          return {
-            MedicineId: itm.MedicineId ?? '',
-            DrugName: itm.DrugName ?? '',
-            Quantity: itm.Quantity ?? '',
-            EnteredOn: itm.EnteredOn ?? '',
-            OrderNumber: itm.OrderNumber ?? '',
-            ProviderName: itm.ProviderName ?? '',
-            DirectionToPatient: itm.DirectionToPatient ?? '',
-          };
-        });
+        // let meds = data.medications.map(itm => {
+        //   return {
+        //     MedicineId: itm.MedicineId ?? '',
+        //     DrugName: itm.DrugName ?? '',
+        //     Quantity: itm.Quantity ?? '',
+        //     EnteredOn: itm.EnteredOn ?? '',
+        //     OrderNumber: itm.OrderNumber ?? '',
+        //     ProviderName: itm.ProviderName ?? '',
+        //     DirectionToPatient: itm.DirectionToPatient ?? '',
+        //   };
+        // });
 
         // console.warn('patient', patient);
         let dataToSend = {
@@ -484,6 +487,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
         }
         console.warn('data to send', dataToSend);
         if (userContext.clientSocket) {
+           console.warn('Sending to socket...');
           userContext.clientSocket.write(
             JSON.stringify({sender: 'doctor', payload: dataToSend}),
           );
@@ -502,8 +506,11 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
         };
 
         updateCurrentPatient({...currentPatient});
+        ToastAndroid.show("Data Sent...", ToastAndroid.SHORT);
         navigation.navigate('HomeScreen');
-      } catch (e) {}
+      } catch (e) {
+        console.log("Hello2")
+      }
     };
 
     return (

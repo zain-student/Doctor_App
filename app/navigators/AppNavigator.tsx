@@ -257,7 +257,7 @@ const AppStack = observer(function AppStack() {
         //@ts-ignore
         if (global.dataToTransfer) {
           //@ts-ignore
-          // client.write(global.dataToTransfer);
+          client.write(global.dataToTransfer);  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         }
         global.connectionEstabished = true;
         clearInterval(global.connectionDiscoveryInterval);

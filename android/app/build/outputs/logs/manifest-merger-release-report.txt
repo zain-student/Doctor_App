@@ -272,7 +272,7 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\hp\.gradle\cach
 activity#com.doctor.MainActivity
 ADDED from C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:31:7-46:18
 	android:screenOrientation
-		ADDED from C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:38:9-45
+		ADDED from C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:38:9-48
 	android:label
 		ADDED from C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:33:9-41
 	android:launchMode

@@ -115,8 +115,8 @@
 62-->C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:35:9-40
 63            android:resizeableActivity="true"
 63-->C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:40:9-42
-64            android:screenOrientation="portrait"
-64-->C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:38:9-45
+64            android:screenOrientation="unspecified"
+64-->C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:38:9-48
 65            android:theme="@style/BootTheme"
 65-->C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android\app\src\main\AndroidManifest.xml:39:9-41
 66            android:windowSoftInputMode="adjustPan" >
