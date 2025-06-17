@@ -1465,7 +1465,8 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           <View style={$patientsListView}>
             <FlatList
               // data={patientQueue}
-              data={query?.length > 0 ? filteredData : userContext.patientsData}
+              // data={query?.length > 0 ? filteredData : userContext.patientsData}  // This is showing the dummy patients data added in pai
+              data={query?.length > 0 ? filteredData : patientStore.patientsForList} 
               // style={$patientsListView}
               extraData={refresh}
               renderItem={({item}) => (
