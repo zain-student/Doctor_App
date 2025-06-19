@@ -468,6 +468,7 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
           VitalsTime: data.patient.VitalsTime,
           PrescriptionTime: moment().toISOString(),
           status: 'Prescription',
+          isUserAdded: data.patient.isUserAdded ?? false,
           Medications: meds,
           //
         };

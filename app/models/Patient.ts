@@ -55,6 +55,7 @@ export const PatientModel = types
     Address: types.string,
     EnteredOn: types.string,
     Services: types.array(ServiceModel),
+    isUserAdded: types.optional(types.boolean, false),
 
     Status: types.maybeNull(types.string),
     CheckInTime: types.maybeNull(types.string),

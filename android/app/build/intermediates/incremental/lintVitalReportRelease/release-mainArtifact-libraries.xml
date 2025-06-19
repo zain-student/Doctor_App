@@ -1145,12 +1145,12 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android@@:expo-modules-core$android-annotation-processor"
-      jars="C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\node_modules\expo-modules-core\android-annotation-processor\build\libs\expo-modules-core$android-annotation-processor-1.1.1.jar"
-      resolved="::"/>
-  <library
       name="C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android@@:expo-modules-core$android-annotation"
       jars="C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\node_modules\expo-modules-core\android-annotation\build\libs\expo-modules-core$android-annotation-1.1.1.jar"
+      resolved="::"/>
+  <library
+      name="C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\android@@:expo-modules-core$android-annotation-processor"
+      jars="C:\Users\hp\Desktop\OFFLINE APPS\doctor\doctor\node_modules\expo-modules-core\android-annotation-processor\build\libs\expo-modules-core$android-annotation-processor-1.1.1.jar"
       resolved="::"/>
   <library
       name="com.google.android.material:material:1.1.0@aar"

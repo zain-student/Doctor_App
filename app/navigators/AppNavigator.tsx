@@ -257,7 +257,7 @@ const AppStack = observer(function AppStack() {
         //@ts-ignore
         if (global.dataToTransfer) {
           //@ts-ignore
-          client.write(global.dataToTransfer);  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+          client.write(global.dataToTransfer); //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         }
         global.connectionEstabished = true;
         clearInterval(global.connectionDiscoveryInterval);
@@ -326,7 +326,12 @@ const AppStack = observer(function AppStack() {
           }
           let _data: any = {patient: {}};
           if (sender !== 'pharmacy') {
-            _data.patient = receivedData.payload;
+            // _data.patient = receivedData.payload;
+            _data.patient = {
+              ...receivedData.payload,
+              isUserAdded: receivedData.payload.isUserAdded === true, // Ensure it's boolean
+            };
+
             _data.isDetailFetched = true;
             if (receivedData.payload.Vitals) {
               let _vitals = [
