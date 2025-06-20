@@ -489,11 +489,11 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
           <View style={$patientsListView}>
             <FlatList
               key={refresh}
-              data={query?.length > 0 ? filteredData : userContext.patientsData.filter(item=>item.isUserAdded)}  // This is showing dummy data from the api for testing 
-              // data={query?.length > 0 ? filteredData : patientStore.patientsForList}  // This will only show data fetched from the mobx store 
+              data={query?.length > 0 ? filteredData : userContext.patientsData}  // This is showing dummy data from the api for testing 
+              // data={query?.length > 0 ? filteredData : patientStore.patientsForList.filter(item=> item.isUserAdded)}  // This will only show data fetched from the mobx store 
 
               // style={$patientsListView}
-              extraData={patientStore.patientsForList}
+              extraData={patientStore.patientsForList.filter(item=>item.isUserAdded)}
               renderItem={({item, index}) => (
                 <>
                   {item && item.patient ? (

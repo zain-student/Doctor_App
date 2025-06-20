@@ -317,13 +317,43 @@ const AppStack = observer(function AppStack() {
           let item = global.patientsBackup.find(
             itm => itm.patient?.PatientId === receivedData.payload.PatientId,
           );
+          // if (item) {
+          //   console.warn('existing item');
+          // } else {
+          //   if (sender === 'pharmacy') {
+          //     return;
+          //   }
+          // }
           if (item) {
-            console.warn('existing item');
-          } else {
-            if (sender === 'pharmacy') {
-              return;
-            }
-          }
+  console.warn('Updating existing patient from receptionist');
+
+  if (sender === 'receptionist') {
+    const index = global.patientsBackup.findIndex(
+      itm => itm.patient?.PatientId === receivedData.payload.PatientId,
+    );
+
+    const updatedPatient = {
+      ...item.patient,
+      EmergencyContactName: receivedData.payload.EmergencyContactName,
+      EmergencyContactPhone: receivedData.payload.EmergencyContactPhone,
+      EmergencyContactRelationship: receivedData.payload.EmergencyContactRelationship,
+      Address: receivedData.payload.Address,
+      City: receivedData.payload.City,
+      Province: receivedData.payload.Province,
+      Country: receivedData.payload.Country,
+      DOB: receivedData.payload.DOB,
+    };
+
+    global.patientsBackup[index] = {
+      ...item,
+      patient: updatedPatient,
+    };
+     ToastAndroid.show('Patient updated from Receptionist', ToastAndroid.SHORT);
+  }
+} else {
+  if (sender === 'pharmacy') return;
+}
+//.................................
           let _data: any = {patient: {}};
           if (sender !== 'pharmacy') {
             // _data.patient = receivedData.payload;
