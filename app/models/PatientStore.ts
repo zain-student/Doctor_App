@@ -474,8 +474,9 @@ const msUntilMidnight = midnight.getTime() - now.getTime();
     console.log('⏱️ Midnight reached — resetting patient queue.');
     store.patientQueue.clear();
     store.selectedPatient.clear();
+    store.patientsForList.clear();
     // store.patients.clear?.();  // This will remove the patients that are from api 
-    store.patientsForList.clear?.();// This will remove the patients that are from api 
+    // store.patientsForList.clear?.();// This will remove the patients that are from api 
     // ✅ Save the reset date
     mmkvStorage.set('lastPatientReset', new Date().toDateString());
     ToastAndroid.show('⏱️ Midnight reached — resetting patient queue.',ToastAndroid.LONG);

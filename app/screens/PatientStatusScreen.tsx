@@ -299,7 +299,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           /////////
           let data = JSON.parse(JSON.stringify(patientData));
           let meds = data.medications.map(itm => {
-            return `${itm.MedicineId}:${itm.DrugName}:${itm.Quantity}:${itm.EnteredOn}:${itm.OrderNumber}:${itm.ProviderName}:${itm.DirectionToPatient}`;
+            return `${itm.MedicineId}|||${itm.DrugName}|||${itm.Quantity}|||${itm.EnteredOn}|||${itm.OrderNumber}|||${itm.ProviderName}|||${itm.DirectionToPatient}`;
             // };
           });
           let dataToSend = {

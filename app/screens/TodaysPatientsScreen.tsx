@@ -493,7 +493,9 @@ export const TodaysPatientsScreen: FC<HomeTabScreenProps<'TodaysPatients'>> =
               // data={query?.length > 0 ? filteredData : patientStore.patientsForList.filter(item=> item.isUserAdded)}  // This will only show data fetched from the mobx store 
 
               // style={$patientsListView}
-              extraData={patientStore.patientsForList.filter(item=>item.isUserAdded)}
+              extraData={patientStore.patientsForList
+                // .filter(item=>item.isUserAdded)
+              }
               renderItem={({item, index}) => (
                 <>
                   {item && item.patient ? (
