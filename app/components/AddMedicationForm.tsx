@@ -1687,6 +1687,12 @@ export default function AddMedicationForm(props: any) {
                       ? matchedDosage.shortName
                       : item.DosageValueUnitName || '';
                   }
+                  const refillIndex = updatedData.findIndex(
+                    f => f.title === 'Refill',
+                  ); // ← or just 6
+                  if (refillIndex !== -1) {
+                    updatedData[refillIndex].value = 'Once Daily';
+                  }
                   // ✅ Step 2: Update Direction To Patient based on latest form values
                   const directionIndex = updatedData.findIndex(
                     field => field.title === 'Direction To Patient',

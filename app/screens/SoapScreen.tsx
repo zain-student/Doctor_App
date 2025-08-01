@@ -487,6 +487,77 @@ export const SoapScreen: FC<PatientStackScreenProps<'PatientVitalsHistory'>> =
           }
         }
         console.warn('data to send', dataToSend);
+// ⛔ Apply safe defaults only for API patients
+// if (!dataToSend.isUserAdded) {
+//   try {
+//     dataToSend.FirstName ||= '';
+//     dataToSend.LastName ||= '';
+//     dataToSend.Gender ||= '';
+//     dataToSend.MRNNo ||= '';
+
+//     dataToSend.CheckInSynced = typeof dataToSend.CheckInSynced === 'boolean'
+//       ? dataToSend.CheckInSynced
+//       : false;
+
+//     dataToSend.Address ||= '';
+//     dataToSend.City ||= '';
+//     dataToSend.Province ||= '';
+//     dataToSend.Country ||= 'Pakistan';
+//     dataToSend.CNIC ||= '';
+//     dataToSend.CellPhoneNumber ||= '';
+//     dataToSend.SiteName ||= '';
+//     dataToSend.MartialStatus ||= '';
+//     dataToSend.SpouseName ||= '';
+//     dataToSend.ZakatEligible =
+//       typeof dataToSend.ZakatEligible === 'boolean' ? dataToSend.ZakatEligible : false;
+
+//     // If you're sending Medications as a string array, it's okay — just ensure `Medications` exists
+//     dataToSend.Medications = Array.isArray(dataToSend.Medications) ? dataToSend.Medications : [];
+
+//     // In case Vitals or NursingNote are needed downstream
+//     dataToSend.Vitals = dataToSend.Vitals ?? [];
+//     dataToSend.NursingNote = dataToSend.NursingNote ?? '';
+//   } catch (e) {
+//     ToastAndroid.show('Fallbacks applied to API patient', ToastAndroid.SHORT);
+//   }
+// }
+
+// ✅ Apply fallback defaults if patient is from API
+if (!dataToSend.isUserAdded) {
+  try {
+    dataToSend.FirstName = dataToSend.FirstName || '';
+    dataToSend.LastName = dataToSend.LastName || '';
+    dataToSend.Gender = dataToSend.Gender || '';
+    dataToSend.MRNNo = dataToSend.MRNNo || '';
+    dataToSend.Address = dataToSend.Address || '';
+    dataToSend.City = dataToSend.City || '';
+    dataToSend.Province = dataToSend.Province || '';
+    dataToSend.Country = dataToSend.Country || 'Pakistan';
+    dataToSend.CNIC = dataToSend.CNIC || '';
+    dataToSend.CellPhoneNumber = dataToSend.CellPhoneNumber || '';
+    dataToSend.SiteName = dataToSend.SiteName || '';
+    dataToSend.MartialStatus = dataToSend.MartialStatus || '';
+    dataToSend.SpouseName = dataToSend.SpouseName || '';
+    dataToSend.ZakatEligible =
+      typeof dataToSend.ZakatEligible === 'boolean'
+        ? dataToSend.ZakatEligible
+        : false;
+
+    // ✅ Ensure arrays are safe
+    dataToSend.Medications = Array.isArray(dataToSend.Medications)
+      ? dataToSend.Medications
+      : [];
+    dataToSend.Services = Array.isArray(dataToSend.Services)
+      ? dataToSend.Services
+      : [];
+  } catch (e) {
+    ToastAndroid.show(
+      'Doctor fallback patient defaults skipped due to error.',
+      ToastAndroid.SHORT,
+    );
+  }
+}
+
         if (userContext.clientSocket) {
            console.warn('Sending to socket...');
           userContext.clientSocket.write(

@@ -108,6 +108,7 @@ export default function SoapPlanItem(props: any) {
                 renderItem={renderMedicationItem}
               />
               <TouchableOpacity
+              
                 onPress={props.onSavePressed}
                 style={{
                   width: '100%',

@@ -351,10 +351,10 @@ export const LandingScreen: FC<LandingScreenProps> = observer(
       </View> */}
           <View style={$loginButtonView}>
             <Text style={{color: 'white', alignSelf: 'center', fontSize: 12}}>
-              Version: 2.0.0{' '}
+              Version: 2.0.2{' '}
             </Text>
             <Text style={{color: 'white', alignSelf: 'center', fontSize: 12}}>
-              Published: May 28, 2025
+              Published: July 01, 2025
             </Text>
 
             <Button
