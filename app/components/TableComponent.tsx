@@ -6,28 +6,28 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {Text} from './Text';
-import {Button} from './Button';
-import {typography} from 'app/theme';
-import {Icon} from './Icon';
-import {widthPercentageToDP} from 'react-native-responsive-screen';
+import React, { useEffect, useState } from 'react';
+import { Text } from './Text';
+import { Button } from './Button';
+import { typography } from 'app/theme';
+import { Icon } from './Icon';
+import { widthPercentageToDP } from 'react-native-responsive-screen';
 import moment from 'moment';
-import {physicalExam, presentComplaint} from 'app/utils/staticDataUtil';
-import {createDeepCopy} from 'app/utils/UtilFunctions';
-import {mmkvStorage} from 'app/utils/UserContext';
+import { physicalExam, presentComplaint } from 'app/utils/staticDataUtil';
+import { createDeepCopy } from 'app/utils/UtilFunctions';
+import { mmkvStorage } from 'app/utils/UserContext';
 
 export default function TableComponent(props: any) {
   const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
   const [tempItem, setTempItem] = useState([]);
   const [diagnosticsData, setDiagnosticsData] = useState([
-    {title: 'Grade', desc: 'Low-grade (99-100.4 °F)'},
-    {title: 'Pattern', desc: 'Continuous'},
+    { title: 'Grade', desc: 'Low-grade (99-100.4 °F)' },
+    { title: 'Pattern', desc: 'Continuous' },
 
-    {title: 'Duration', desc: '2 Weeks'},
-    {title: 'Associated Symptoms', desc: 'Runny Nose,Cough'},
-    {title: 'Measures Taken', desc: 'Paracetamol'},
-    {title: 'Exposure to Extreme Heat', desc: 'No'},
+    { title: 'Duration', desc: '2 Weeks' },
+    { title: 'Associated Symptoms', desc: 'Runny Nose,Cough' },
+    { title: 'Measures Taken', desc: 'Paracetamol' },
+    { title: 'Exposure to Extreme Heat', desc: 'No' },
   ]);
 
   useEffect(() => {
@@ -36,11 +36,11 @@ export default function TableComponent(props: any) {
       setTempItem(
         props.tableType === 'physicalExam'
           ? createDeepCopy(
-              global.physicalExamData ? global.physicalExamData : [],
-            )
+            global.physicalExamData ? global.physicalExamData : [],
+          )
           : createDeepCopy(
-              global.presentComplaintData ? global.presentComplaintData : [],
-            ),
+            global.presentComplaintData ? global.presentComplaintData : [],
+          ),
       );
     }
   }, [props.selectedIndexForaEdit]);
@@ -51,14 +51,20 @@ export default function TableComponent(props: any) {
     setDiagnosticsData(_diagnosticsData);
   };
   // .......................................................................................
-  const onSelectItem2 = (sectionIndex: number, index: number, option: any) => {
+  const onSelectItem2 = (
+    sectionIndex: number,
+    index: number,
+    option: any,
+    type?: "number" | "unit"
+  ) => {
     try {
       let data = [];
       let prevData = [];
+
       if (props.selectedIndexForaEdit === -1) {
         data = [...tempItem];
       } else {
-        if (props.tableType === 'physicalExam') {
+        if (props.tableType === "physicalExam") {
           prevData = [...props.currentPatient.physicalExams];
           data = [...prevData[props.selectedIndexForaEdit].Data];
         } else {
@@ -66,38 +72,39 @@ export default function TableComponent(props: any) {
           data = [...prevData[props.selectedIndexForaEdit].Data];
         }
       }
-      if (data[sectionIndex].data[index].AnswerList) {
-        let indexToFind = data[sectionIndex].data[index].AnswerList.findIndex(
-          item => item.Name === option.Name,
-        );
 
-        // if (indexToFind !== -1) {
-        //   data[sectionIndex].data[index].AnswerList.splice(indexToFind, 1);
-        // } else {
-        //   data[sectionIndex].data[index].AnswerList = [
-        //     ...data[sectionIndex].data[index].AnswerList,
-        //     {...option, AnswerOptionId: option.Id},
-        //   ];
-        // }
-        if (indexToFind !== -1) {
-          // Item already exists → remove it
-          data[sectionIndex].data[index].AnswerList.splice(indexToFind, 1);
-        } else {
-          // Only keep one item selected per index (duration item)
-          data[sectionIndex].data[index].AnswerList = [
-            {...option, AnswerOptionId: option.Id},
-          ];
-        }
-      } else {
-        data[sectionIndex].data[index].AnswerList = [
-          {...option, AnswerOptionId: option.Id},
+      let answerList = data[sectionIndex].data[index].AnswerList || [];
+
+      if (type === "number") {
+        // keep only numbers latest + any unit
+        answerList = [
+          { ...option, AnswerOptionId: option.Id },
+          ...answerList.filter((a) =>
+            ["Day", "Week", "Month"].includes(a.Name)
+          ),
         ];
+      } else if (type === "unit") {
+        // keep only unit latest + any number
+        answerList = [
+          { ...option, AnswerOptionId: option.Id },
+          ...answerList.filter((a) => !isNaN(a.Name)),
+        ];
+      } else {
+        // default (all other questions) → single select
+        let idx = answerList.findIndex((a) => a.Name === option.Name);
+        if (idx !== -1) {
+          answerList.splice(idx, 1); // toggle off
+        } else {
+          answerList = [{ ...option, AnswerOptionId: option.Id }];
+        }
       }
+
+      data[sectionIndex].data[index].AnswerList = answerList;
 
       if (props.selectedIndexForaEdit === -1) {
         setTempItem(data);
       } else {
-        if (props.tableType === 'presentComplaint') {
+        if (props.tableType === "presentComplaint") {
           prevData[props.selectedIndexForaEdit].Data = data;
           prevData[props.selectedIndexForaEdit].isChanged = true;
           props.updateCurrentPatient({
@@ -114,9 +121,69 @@ export default function TableComponent(props: any) {
         }
       }
     } catch (e) {
-      console.warn('err', e);
+      console.warn("err", e);
     }
   };
+
+  // const onSelectItem2 = (sectionIndex: number, index: number, option: any) => {
+  //   try {
+  //     let data = [];
+  //     let prevData = [];
+  //     if (props.selectedIndexForaEdit === -1) {
+  //       data = [...tempItem];
+  //     } else {
+  //       if (props.tableType === 'physicalExam') {
+  //         prevData = [...props.currentPatient.physicalExams];
+  //         data = [...prevData[props.selectedIndexForaEdit].Data];
+  //       } else {
+  //         prevData = [...props.currentPatient.presentingComplain];
+  //         data = [...prevData[props.selectedIndexForaEdit].Data];
+  //       }
+  //     }
+  //     if (data[sectionIndex].data[index].AnswerList) {
+  //       let indexToFind = data[sectionIndex].data[index].AnswerList.findIndex(
+  //         item => item.Name === option.Name,
+  //       );
+
+
+  //       if (indexToFind !== -1) {
+  //         // Item already exists → remove it
+  //         data[sectionIndex].data[index].AnswerList.splice(indexToFind, 1);
+  //       } else {
+  //         // Only keep one item selected per index (duration item)
+  //         data[sectionIndex].data[index].AnswerList = [
+  //           {...option, AnswerOptionId: option.Id},
+  //         ];
+  //       }
+  //     } else {
+  //       data[sectionIndex].data[index].AnswerList = [
+  //         {...option, AnswerOptionId: option.Id},
+  //       ];
+  //     }
+
+  //     if (props.selectedIndexForaEdit === -1) {
+  //       setTempItem(data);
+  //     } else {
+  //       if (props.tableType === 'presentComplaint') {
+  //         prevData[props.selectedIndexForaEdit].Data = data;
+  //         prevData[props.selectedIndexForaEdit].isChanged = true;
+  //         props.updateCurrentPatient({
+  //           ...props.currentPatient,
+  //           presentingComplain: [...prevData],
+  //         });
+  //       } else {
+  //         prevData[props.selectedIndexForaEdit].Data = data;
+  //         prevData[props.selectedIndexForaEdit].isChanged = true;
+  //         props.updateCurrentPatient({
+  //           ...props.currentPatient,
+  //           physicalExams: [...prevData],
+  //         });
+  //       }
+  //     }
+  //   } catch (e) {
+  //     console.warn('err', e);
+  //   }
+  // };
   // ..............................................................
   const onSavePressed = () => {
     try {
@@ -152,22 +219,10 @@ export default function TableComponent(props: any) {
       }
       props.setShowTableComp(false);
       props.setSelectedIndexForaEdit(null);
-    } catch (e) {}
+    } catch (e) { }
   };
 
-  // const checkIfItemExistsInList2 = (list: any[], itemToCheck: any) => {
-  //   try {
-  //     let exists = list.find(item => item.Name === itemToCheck.Name);
-  //     if (exists) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   } catch (e) {
-  //     console.warn('err', e);
-  //     return false;
-  //   }
-  // };
+
 
   // ...............................................................
   // fever
@@ -250,25 +305,25 @@ export default function TableComponent(props: any) {
   console.warn('here is data', props.currentPatient.patient.PatientId);
   return (
     <>
-      <View style={{borderWidth: 0, borderColor: '#DBDADE', marginTop: 8}}>
+      <View style={{ borderWidth: 0, borderColor: '#DBDADE', marginTop: 8 }}>
         {props.selectedIndexForaEdit !== null ? (
           <>
             {props.selectedIndexForaEdit === -1 ||
-            checkSectionListVisibility() ? (
+              checkSectionListVisibility() ? (
               <>
                 <FlatList
                   data={
                     props.selectedIndexForaEdit === -1
                       ? tempItem
                       : props.tableType === 'physicalExam'
-                      ? props.currentPatient.physicalExams[
+                        ? props.currentPatient.physicalExams[
                           props.selectedIndexForaEdit
                         ].Data
-                      : props.currentPatient.presentingComplain[
+                        : props.currentPatient.presentingComplain[
                           props.selectedIndexForaEdit
                         ].Data
                   }
-                  renderItem={({item, index: sectionIndex}) => (
+                  renderItem={({ item, index: sectionIndex }) => (
                     <>
                       <View
                         style={{
@@ -393,7 +448,7 @@ export default function TableComponent(props: any) {
                         }}>
                         <FlatList
                           data={item.data}
-                          renderItem={({item, index}) => (
+                          renderItem={({ item, index }) => (
                             <>
                               {item.OptionList?.length > 0 && (
                                 <View
@@ -413,12 +468,12 @@ export default function TableComponent(props: any) {
                                     }}>
                                     {item.QuestionName}:{' '}
                                   </Text>
-                                  <FlatList
-                                  key={2}
+                                  {/* <FlatList
+                                    key={2}
                                     data={item.OptionList}
                                     numColumns={2}
                                     // style={{maxWidth: widthPercentageToDP(60)}}
-                                      style={{ width: '100%' }}
+                                    style={{ width: '100%' }}
                                     // contentContainerStyle={{ flexDirection: 'row' }}
                                     // columnWrapperStyle={{justifyContent:'space-around'}}
                                     renderItem={({
@@ -427,7 +482,7 @@ export default function TableComponent(props: any) {
                                     }) => (
                                       <View>
                                         {/* .................................................................... */}
-                                        {innerItem && innerItem.Name && (
+                                  {/* {innerItem && innerItem.Name && (
                                           <Text
                                             onPress={() =>
                                               onSelectItem2(
@@ -452,11 +507,104 @@ export default function TableComponent(props: any) {
                                           </Text>
                                         )}
                                         {/* this is where our answer data is showing */}
-                                        {/* ........................................................ */}
-                                      </View>
+                                  {/* ........................................................ */}
+                                  {/* </View>
                                     )}
-                                  />
+                                  /> */}
+                                  {item.QuestionName === "Duration" ? (
+                                    <View style={{ width: "100%" }}>
+                                      {/* Numbers */}
+                                      <FlatList
+                                        data={item.OptionList.filter((opt) => !isNaN(opt.Name))}
+                                        numColumns={5}
+                                        renderItem={({ item: innerItem }) => (
+                                          <Text
+                                            onPress={() =>
+                                              onSelectItem2(sectionIndex, index, innerItem, "number")
+                                            }
+                                            style={{
+                                              fontSize: 12,
+                                              fontFamily: checkIfItemExistsInList2(
+                                                item.AnswerList.filter((a) => !isNaN(a.Name)),
+                                                innerItem
+                                              )
+                                                ? typography.primary.bold
+                                                : typography.primary.normal,
+                                              color: "black",
+                                              margin: 4,
+                                            }}
+                                          >
+                                            {innerItem.Name}
+                                          </Text>
+                                        )}
+                                      />
+
+                                      {/* Units */}
+                                      <FlatList
+                                        data={item.OptionList.filter((opt) =>
+                                          ["Day", "Week", "Month"].includes(opt.Name)
+                                        )}
+                                        horizontal
+                                        renderItem={({ item: innerItem }) => (
+                                          <Text
+                                            onPress={() =>
+                                              onSelectItem2(sectionIndex, index, innerItem, "unit")
+                                            }
+                                            style={{
+                                              fontSize: 12,
+                                              fontFamily: checkIfItemExistsInList2(
+                                                item.AnswerList.filter((a) =>
+                                                  ["Day", "Week", "Month"].includes(a.Name)
+                                                ),
+                                                innerItem
+                                              )
+                                                ? typography.primary.bold
+                                                : typography.primary.normal,
+                                              color: "black",
+                                              margin: 6,
+                                            }}
+                                          >
+                                            {innerItem.Name}
+                                          </Text>
+                                        )}
+                                      />
+                                    </View>
+                                  ) : (
+                                    // keep your old FlatList for all other questions
+                                    <FlatList
+                                      key={2}
+                                      data={item.OptionList}
+                                      numColumns={2}
+                                      style={{ width: "100%" }}
+                                      renderItem={({ item: innerItem }) => (
+                                        <View>
+                                          {innerItem && innerItem.Name && (
+                                            <Text
+                                              onPress={() =>
+                                                onSelectItem2(sectionIndex, index, innerItem)
+                                              }
+                                              style={{
+                                                fontSize: 12,
+                                                fontFamily: checkIfItemExistsInList2(
+                                                  item.AnswerList,
+                                                  innerItem
+                                                )
+                                                  ? typography.primary.bold
+                                                  : typography.primary.normal,
+                                                color: "black",
+                                                marginRight: 4,
+                                              }}
+                                            >
+                                              {innerItem.Name},
+                                            </Text>
+                                          )}
+                                        </View>
+                                      )}
+                                    />
+                                  )}
+
                                   {/* <Text style={{fontSize: 12}}>{item.desc}</Text> */}
+
                                 </View>
                               )}
                             </>
@@ -480,7 +628,7 @@ export default function TableComponent(props: any) {
                   marginBottom: 6,
                   height: 40,
                 }}>
-                <Text preset="bold" style={{color: 'white'}}>
+                <Text preset="bold" style={{ color: 'white' }}>
                   SAVE
                 </Text>
               </TouchableOpacity>
@@ -500,12 +648,12 @@ export default function TableComponent(props: any) {
                   props.tableType === 'allergy'
                     ? props.currentPatient.allergies
                     : props.tableType === 'physicalExam'
-                    ? props.currentPatient.physicalExams
-                    : props.currentPatient.presentingComplain
+                      ? props.currentPatient.physicalExams
+                      : props.currentPatient.presentingComplain
                 }
                 ListEmptyComponent={() => (
                   <Text
-                    style={{alignSelf: 'center', color: 'black', fontSize: 11}}>
+                    style={{ alignSelf: 'center', color: 'black', fontSize: 11 }}>
                     No data found
                   </Text>
                 )}
@@ -551,7 +699,7 @@ export default function TableComponent(props: any) {
                     </Text>
                   </View>
                 )}
-                renderItem={({item, index}) => (
+                renderItem={({ item, index }) => (
                   <TouchableOpacity
                     onPress={() => {
                       setSelectedItemIndex(index);
@@ -648,7 +796,7 @@ export default function TableComponent(props: any) {
                       console.warn('err', e);
                     }
                   }}>
-                  <Text preset="bold" style={{color: 'white'}}>
+                  <Text preset="bold" style={{ color: 'white' }}>
                     Add to Note
                   </Text>
                 </TouchableOpacity>
@@ -678,7 +826,7 @@ export default function TableComponent(props: any) {
                     console.warn('err', e);
                   }
                 }}>
-                <Text preset="bold" style={{color: 'white'}}>
+                <Text preset="bold" style={{ color: 'white' }}>
                   View/Edit
                 </Text>
               </TouchableOpacity>

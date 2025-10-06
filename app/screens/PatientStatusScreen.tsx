@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useContext, useState} from 'react';
+import React, { FC, useCallback, useContext, useState } from 'react';
 import {
   TouchableOpacity,
   Image,
@@ -13,28 +13,28 @@ import {
   Modal,
   Platform,
 } from 'react-native';
-import {Button, ListItem, Screen, Text, Header} from '../components';
-import {HomeTabScreenProps} from '../navigators/HomeNavigator';
-import {spacing, colors, typography} from '../theme';
-import {openLinkInBrowser} from '../utils/openLinkInBrowser';
-import {isRTL} from '../i18n';
-import {Icon} from '../components';
-import {useStores} from 'app/models';
-import {calculateFullAge} from 'app/models/helpers/dateHelpers';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {formatDate} from 'app/utils/formatDate';
-import {ProfileIconButton} from './HomeScreen/ProfileIconButton';
-import {HeaderBackButton} from './HomeScreen/HeaderBackButton';
-import {useFocusEffect} from '@react-navigation/native';
-import {mmkvStorage, UserContext} from 'app/utils/UserContext';
-import {DrawerIconButton} from './HomeScreen/DrawerIconButton';
+import { Button, ListItem, Screen, Text, Header } from '../components';
+import { HomeTabScreenProps } from '../navigators/HomeNavigator';
+import { spacing, colors, typography } from '../theme';
+import { openLinkInBrowser } from '../utils/openLinkInBrowser';
+import { isRTL } from '../i18n';
+import { Icon } from '../components';
+import { useStores } from 'app/models';
+import { calculateFullAge } from 'app/models/helpers/dateHelpers';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { formatDate } from 'app/utils/formatDate';
+import { ProfileIconButton } from './HomeScreen/ProfileIconButton';
+import { HeaderBackButton } from './HomeScreen/HeaderBackButton';
+import { useFocusEffect } from '@react-navigation/native';
+import { mmkvStorage, UserContext } from 'app/utils/UserContext';
+import { DrawerIconButton } from './HomeScreen/DrawerIconButton';
 import moment from 'moment';
 import {
   getPhysicalExamFromPatients,
   getPresentCompFromPatients,
 } from 'app/utils/UtilFunctions';
 import Loading from 'app/components/Loading';
-import {postRequest} from 'app/services/api/NetworkService';
+import { postRequest } from 'app/services/api/NetworkService';
 import RNFS from 'react-native-fs';
 
 const chainReactLogo = require('../../assets/images/cr-logo.png');
@@ -189,9 +189,9 @@ let popupMsg = '';
 export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
   function PatientStatusScreen(_props) {
     const [patient, setPatient] = useState('');
-    const {navigation} = _props;
-    const {patientStore, siteStore} = useStores();
-    const {patientQueue, patientsForList} = patientStore;
+    const { navigation } = _props;
+    const { patientStore, siteStore } = useStores();
+    const { patientQueue, patientsForList } = patientStore;
     const [refresh, setRefresh] = useState('1');
     const userContext = useContext(UserContext);
     const [filteredData, setFilteredData] = useState([]);
@@ -230,7 +230,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                 if (
                   !global.receivedPatients[k].isSyncedLocally &&
                   global.receivedPatients[k]?.patient.PatientId ===
-                    patients[i].patient.PatientId
+                  patients[i].patient.PatientId
                 ) {
                   patients[i].patient = global.receivedPatients[k].patient;
                   patients[i].isFromNurse = true;
@@ -319,7 +319,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           console.warn('data to send', dataToSend);
           if (userContext.clientSocket) {
             userContext.clientSocket.write(
-              JSON.stringify({sender: 'doctor', payload: dataToSend}),
+              JSON.stringify({ sender: 'doctor', payload: dataToSend }),
             );
           }
           setTimeout(() => {
@@ -502,11 +502,17 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             SelectedAnswers: string[];
           }[];
         }[] = [];
-        if (patientData.patient.Services) {
-          patientData.patient.Services.forEach((service: any) => {
+        (patientData?.patient?.Services ?? []).forEach((service: any) => {
+          if (service?.ServiceId && service?.ServiceName) {
             selectedServices.push(service);
-          });
-        }
+          }
+        });
+// ...................Changed above code to avoid crash if Services is null
+        // if (patientData.patient.Services) {
+        //   patientData.patient.Services.forEach((service: any) => {
+        //     selectedServices.push(service);
+        //   });
+        // }
         if (patientData.allergies) {
           patientData.allergies.forEach((item: any) => {
             allergies.push({
@@ -527,8 +533,8 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               ReactionName: item.Reactions
                 ? item.Reactions
                 : item.ReactionName
-                ? item.ReactionName
-                : '',
+                  ? item.ReactionName
+                  : '',
               AllergenId: item.AllergenId ? item.AllergenId : '',
               ReactionId: item.ReactionId ? item.ReactionId : '',
             });
@@ -637,15 +643,15 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             PatientId: patient.newPatientId
               ? patient.newPatientId
               : patient.PatientId > 0
-              ? patient.PatientId
-              : null,
+                ? patient.PatientId
+                : null,
             FirstName: patient.FirstName,
             LastName: patient.LastName,
             MRNNo: patient.PatientId > 0 ? patient.MRNNo : null,
             DOB: patient.DOB
               ? moment(patient.DOB, 'DD/MM/YYYY hh:mm:ss A').format(
-                  'YYYY-MM-DD',
-                )
+                'YYYY-MM-DD',
+              )
               : '',
             CNIC: patient.CNIC ? patient.CNIC : '',
             CellPhoneNumber: patient.CellPhoneNumber
@@ -656,29 +662,29 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             SiteId: patient.SiteId
               ? patient.SiteId
               : patient.SiteName
-              ? siteStore.sites.find(item => item.SiteName === patient.SiteName)
+                ? siteStore.sites.find(item => item.SiteName === patient.SiteName)
                   ?.SiteId
-              : '',
+                : '',
             MartialStatus:
               patient.PatientId > 0
                 ? patient.MaritalStatusId
                 : patient.MartialStatus
-                ? patient.MartialStatus
-                : '',
+                  ? patient.MartialStatus
+                  : '',
             SpouseName: patient.SpouseName ? patient.SpouseName : '',
             Country: patient.Country ? patient.Country : '',
             City:
               patient.PatientId > 0
                 ? patient.CityId
                 : patient.City
-                ? patient.City
-                : '',
+                  ? patient.City
+                  : '',
             Province:
               patient.PatientId > 0
                 ? patient.ProvinceId
                 : patient.Province
-                ? patient.Province
-                : '',
+                  ? patient.Province
+                  : '',
             Address: patient.Address ? patient.Address : '',
             EnteredOn:
               patient.PatientId > 0
@@ -772,10 +778,10 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                   };
                 }),
               };
-            } catch (e) {}
+            } catch (e) { }
             userContext.updatePatientsData(prevData);
           }
-          Clipboard.setString(JSON.stringify({patient: data.patient}));
+          Clipboard.setString(JSON.stringify({ patient: data.patient }));
           popupMsg = 'Data saved successfully!';
           setShowInfoPopup(true);
           sendCheckoutStatusToOtherApps({
@@ -803,11 +809,10 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
     // Function to write logs to the file
     const writeLog = async (logMessage: string) => {
       try {
-        const filePath = `${
-          Platform.OS === 'android'
+        const filePath = `${Platform.OS === 'android'
             ? RNFS.DownloadDirectoryPath
             : RNFS.DocumentDirectoryPath
-        }/logs.json`;
+          }/logs.json`;
         const newLog = {
           timestamp: new Date().toISOString(),
           message: logMessage,
@@ -851,7 +856,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             }),
           );
         }
-      } catch (e) {}
+      } catch (e) { }
     };
 
     const getAnswerIdsFromIds = (answersList: any[], optionList: any[]) => {
@@ -908,10 +913,10 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
       return false;
     };
 
-    const PatientItem = ({title, item}) => (
+    const PatientItem = ({ title, item }) => (
       <View style={$patientItemView}>
         <View style={$patientItemTitleView}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Icon icon="userIcon" size={22} />
             <Text
               testID="login-heading"
@@ -922,11 +927,11 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           </View>
           {shouldSyncOptionBeDisplayed(title) ? (
             <TouchableOpacity
-              style={{paddingHorizontal: 4}}
+              style={{ paddingHorizontal: 4 }}
               onPress={() => onSyncWithServerPressed(item)}>
               <Text
                 preset="default"
-                style={{fontSize: 10, paddingHorizontal: 1, color: '#009FFF'}}>
+                style={{ fontSize: 10, paddingHorizontal: 1, color: '#009FFF' }}>
                 Sync
               </Text>
             </TouchableOpacity>
@@ -934,7 +939,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             <Icon
               icon="syncDone"
               size={24}
-              // style={{position: 'absolute', right: 20}}
+            // style={{position: 'absolute', right: 20}}
             />
           )}
         </View>
@@ -942,13 +947,13 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           <Text
             testID="login-heading"
             preset="bold"
-            style={{color: '#475569', fontSize: 12}}>
+            style={{ color: '#475569', fontSize: 12 }}>
             {title.FirstName + ' ' + title.LastName}
           </Text>
           <Text
             testID="login-heading"
             preset="default"
-            style={{fontSize: 10, color: '#475569'}}>
+            style={{ fontSize: 10, color: '#475569' }}>
             {
               // item.MRNNo + ' | ' +
               title.Gender + ' | ' + calculateFullAge(title.DOB)
@@ -958,23 +963,23 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
 
         {/* Check in..... */}
         <View style={$patientItemDetailView}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <View style={[$circleLineView, {marginTop: 14}]}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={[$circleLineView, { marginTop: 14 }]}>
               <View
                 style={[
                   $circleStartView,
-                  title.CheckInTime && {backgroundColor: colors.themeText},
+                  title.CheckInTime && { backgroundColor: colors.themeText },
                 ]}
               />
               <View
                 style={[
                   $lineView,
-                  title.CheckInTime && {backgroundColor: colors.themeText},
+                  title.CheckInTime && { backgroundColor: colors.themeText },
                 ]}
               />
             </View>
             <Icon icon="home" size={23} />
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text
                 // testID="login-heading"
                 preset={title.CheckInTime ? 'bold' : 'default'}
@@ -985,7 +990,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                     fontSize: 12,
                     color: title.CheckInTime ? 'black' : '#909090',
                   },
-                  title.CheckInTime && {color: '#23AAFA'},
+                  title.CheckInTime && { color: '#23AAFA' },
                 ]}>
                 {'Check - In'}
               </Text>
@@ -995,7 +1000,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                   preset="default"
                   style={[
                     $patientsText,
-                    {marginStart: spacing.sm, fontSize: 12},
+                    { marginStart: spacing.sm, fontSize: 12 },
                   ]}>
                   {/* {title.CheckInTime ? formatDate(title.CheckInTime) : ""} */}
                   {moment(title.CheckInTime).format('YYYY-MM-DD hh:mm A')}
@@ -1006,7 +1011,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           <View
             style={[
               $circleView,
-              {backgroundColor: title.CheckInSynced ? 'white' : 'lightgray'},
+              { backgroundColor: title.CheckInSynced ? 'white' : 'lightgray' },
             ]}>
             <Icon
               icon={title.CheckInSynced ? 'checkIcon' : 'unsync'}
@@ -1018,24 +1023,24 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
 
         {/* Vitals..... */}
         <View style={$patientItemDetailView}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <View style={[$circleLineView]}>
               <View
                 style={[
                   $lineView,
-                  title.VitalsTime && {backgroundColor: colors.themeText},
+                  title.VitalsTime && { backgroundColor: colors.themeText },
                 ]}
               />
               <View
                 style={[
                   $circleStartView,
-                  title.VitalsTime && {backgroundColor: colors.themeText},
+                  title.VitalsTime && { backgroundColor: colors.themeText },
                 ]}
               />
               <View
                 style={[
                   $lineView,
-                  title.VitalsTime && {backgroundColor: colors.themeText},
+                  title.VitalsTime && { backgroundColor: colors.themeText },
                 ]}
               />
 
@@ -1047,7 +1052,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               icon={title.VitalsTime ? 'prescription' : 'prescription'}
               size={20}
             />
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text
                 // testID="login-heading"
                 preset={title.VitalsTime ? 'bold' : 'default'}
@@ -1059,7 +1064,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                     fontSize: 12,
                     color: title.VitalsTime ? 'black' : '#909090',
                   },
-                  title.VitalsTime && {color: colors.themeText},
+                  title.VitalsTime && { color: colors.themeText },
                 ]}>
                 {'Vitals'}
               </Text>
@@ -1069,7 +1074,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                   preset="default"
                   style={[
                     $patientsText,
-                    {marginLeft: spacing.sm, fontSize: 12},
+                    { marginLeft: spacing.sm, fontSize: 12 },
                   ]}>
                   {moment(title.VitalsTime).format('YYYY-MM-DD hh:mm A')}
                 </Text>
@@ -1079,7 +1084,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           <View
             style={[
               $circleView,
-              {backgroundColor: title.vitalsSynced ? 'green' : 'lightgray'},
+              { backgroundColor: title.vitalsSynced ? 'green' : 'lightgray' },
             ]}>
             <Icon
               icon={title.vitalsSynced ? 'sync' : 'unsync'}
@@ -1091,7 +1096,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
 
         {/* Prescription..... */}
         <View style={$patientItemDetailView}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <View style={[$circleLineView]}>
               <View
                 style={[
@@ -1119,7 +1124,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               />
             </View>
             <Icon icon="pharmacy" size={20} />
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text
                 // testID="login-heading"
                 preset={title.PrescriptionTime ? 'bold' : 'default'}
@@ -1142,20 +1147,20 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                   preset="default"
                   style={[
                     $patientsText,
-                    {marginLeft: spacing.sm, fontSize: 12},
+                    { marginLeft: spacing.sm, fontSize: 12 },
                   ]}>
                   {title.PrescriptionTime
                     ? moment(title.PrescriptionTime).format(
-                        'YYYY-MM-DD hh:mm A',
-                      )
+                      'YYYY-MM-DD hh:mm A',
+                    )
                     : ''}
                 </Text>
               )}
             </View>
           </View>
           {!successResp ? null : successResp.includes(
-              title.PatientId,
-            ) ? null : title.PrescriptionTime ? (
+            title.PatientId,
+          ) ? null : title.PrescriptionTime ? (
             <TouchableOpacity
               onPress={() => onSyncPressed(title)}
               style={[
@@ -1167,7 +1172,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               ]}>
               <Text
                 preset="default"
-                style={{fontSize: 10, paddingHorizontal: 1}}>
+                style={{ fontSize: 10, paddingHorizontal: 1 }}>
                 Sync Locally
               </Text>
             </TouchableOpacity>
@@ -1191,7 +1196,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
 
         {/* Pharmacy..... */}
         <View style={$patientItemDetailView}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <View style={[$circleLineView]}>
               <View
                 style={[
@@ -1219,7 +1224,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               />
             </View>
             <Icon icon="vitals" size={20} />
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text
                 testID="login-heading"
                 preset={title.PharmacyTime ? 'bold' : 'default'}
@@ -1230,7 +1235,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                     fontSize: 12,
                     color: title.PharmacyTime ? 'black' : '#909090',
                   },
-                  title.PharmacyTime && {color: colors.themeText},
+                  title.PharmacyTime && { color: colors.themeText },
                 ]}>
                 {'Pharmacy'}
               </Text>
@@ -1240,7 +1245,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                   preset="default"
                   style={[
                     $patientsText,
-                    {marginLeft: spacing.sm, fontSize: 12},
+                    { marginLeft: spacing.sm, fontSize: 12 },
                   ]}>
                   {title.PharmacyTime
                     ? moment(title.PharmacyTime).format('YYYY-MM-DD hh:mm A')
@@ -1252,7 +1257,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           <View
             style={[
               $circleView,
-              {backgroundColor: title.pharmacySynced ? 'green' : 'lightgray'},
+              { backgroundColor: title.pharmacySynced ? 'green' : 'lightgray' },
             ]}>
             <Icon
               icon={title.pharmacySynced ? 'sync' : 'unsync'}
@@ -1269,7 +1274,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             borderBottomWidth: 0,
             marginBottom: 4,
           }}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <View style={[$circleLineView]}>
               <View
                 style={[
@@ -1285,21 +1290,21 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                   title.CheckoutTime && {
                     backgroundColor: colors.themeText,
                   },
-                  {marginBottom: 14},
+                  { marginBottom: 14 },
                 ]}
               />
 
               {/* <View style={[$lineView, title.Status == 'Checkout' && {backgroundColor: colors.themeText}]} /> */}
             </View>
             <Icon icon="checkout" size={20} />
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text
                 testID="login-heading"
                 preset={title.CheckoutTime ? 'bold' : 'default'}
                 style={[
                   $patientsText,
-                  {marginStart: spacing.sm, fontSize: 12, color: '#909090'},
-                  title.CheckoutTime && {color: colors.themeText},
+                  { marginStart: spacing.sm, fontSize: 12, color: '#909090' },
+                  title.CheckoutTime && { color: colors.themeText },
                 ]}>
                 {'Check-Out'}
               </Text>
@@ -1309,7 +1314,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
                   preset="default"
                   style={[
                     $patientsText,
-                    {marginLeft: spacing.sm, fontSize: 12},
+                    { marginLeft: spacing.sm, fontSize: 12 },
                   ]}>
                   {moment(title.CheckoutTime).format('YYYY-MM-DD hh:mm A')}
                 </Text>
@@ -1317,8 +1322,8 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
             </View>
           </View>
           {!checkoutSuccessResp ? null : checkoutSuccessResp.includes(
-              title.PatientId,
-            ) ? null : title.CheckoutTime ? (
+            title.PatientId,
+          ) ? null : title.CheckoutTime ? (
             <TouchableOpacity
               onPress={() => onCheckoutSyncPressed(title)}
               style={[
@@ -1330,7 +1335,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               ]}>
               <Text
                 preset="default"
-                style={{fontSize: 10, paddingHorizontal: 1}}>
+                style={{ fontSize: 10, paddingHorizontal: 1 }}>
                 Sync Locally
               </Text>
             </TouchableOpacity>
@@ -1338,7 +1343,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
           <View
             style={[
               $circleView,
-              {backgroundColor: title.checkoutSynced ? 'green' : 'lightgray'},
+              { backgroundColor: title.checkoutSynced ? 'green' : 'lightgray' },
             ]}>
             <Icon
               icon={title.checkoutSynced ? 'sync' : 'unsync'}
@@ -1429,7 +1434,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
         <Screen
           preset="fixed"
           contentContainerStyle={$container}
-          // safeAreaEdges={["top"]}
+        // safeAreaEdges={["top"]}
         >
           <Loading isLoading={isLoading} />
           <View
@@ -1459,7 +1464,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               value={query}
               onChangeText={handleSearch}
             />
-            <Icon icon="searchIcon" size={23} style={{marginRight: 10}} />
+            <Icon icon="searchIcon" size={23} style={{ marginRight: 10 }} />
           </View>
           {/* <Text preset="heading" tx="patientStatusScreen.patientStatus" style={$title} /> */}
           <View style={$patientsListView}>
@@ -1469,7 +1474,7 @@ export const PatientStatusScreen: FC<HomeTabScreenProps<'PatientStatus'>> =
               // data={query?.length > 0 ? filteredData : patientStore.patientsForList.filter(item=>item.isUserAdded)} 
               // style={$patientsListView}
               extraData={refresh}
-              renderItem={({item}) => (
+              renderItem={({ item }) => (
                 <>
                   {item ? (
                     item.isDetailFetched ? (
